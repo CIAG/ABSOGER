@@ -1,0 +1,1639 @@
+;il faut d'abord lancer le programme installxtelnet.dhop
+;il crée et lance le service xtelnet.exe
+;
+;ce service charge a partir du fichier /divalto/sys/fxtelnet.txt
+;
+;la liste des ports à écouter ainsi que le nom du programme à lancer 
+;
+;par defaut ce fichier contiend une ligne avec
+;2247;demoxtelnet.dhop;demo
+;
+;on trouve d'abord le numero de port a écouter puis le nom du programme diva 
+;à lancer puis le code utilisteur par défaut au lancement du programme, par defaut c'est demo
+;
+;
+;l'exemple lance le programme demoxtelnet.dhop
+;
+;apres avoir lancer le service xtelnet, dans /divalto/sys il y a le fichier batch
+;testxtelnet.bat, il contient la ligne qui permet de lancer l'émulateur de terminal de windows xp
+;sur sa propre adresse ip sur le port 2247 et avec le type de terminal vtnt
+;
+;contenu de testxtelnet.bat
+;telnet 127.0.0.1 2247 -t vtnt
+;
+;Le programme diva dialogue avec le terminal telnet avec les fonctions contenues dans ytelnet.dhop
+;
+;le paramètrage de ytelnet.dhop est dans divalto.ini pour faire du debug et pour quelque reglage
+;par defaut, le programme diva doit utiliser les fonction de ytelnet.dhop pour fixer les 
+;rêglage
+;
+;[ytelnet]
+;debug=0
+;				si debug 1, ytelnet ecrit dans le fichier /divalto/sys/xtelnet.log 
+;				les erreurs de connexion 
+;pc8=0
+;				par defaut il travaille en ansi
+;
+;timeout=900
+;		time out de déconexion
+;		si pas de caractere recu au bout de n secondes alors on arrete la connexion,
+;		c'est pour ne pas avoir des connexions actives alors que l'utilisateur a éteint 
+;		son terminal mais sans se déconecter du serveur
+;     si l'utilisateur de déconnecte du serveur, l'arrêt du programme diva est immédiat.
+;		900 -> 15 minutes , mettre la valeur voulue
+;
+;display=0
+;		ytelnet affiche les caracteres récu, c'est pour faire du debug
+;
+;fic=txtelnet.txt
+;			fichier des touches des fonctions par defaut txtelnet.txt ou tvt220.txt
+;
+;			le fichier ttelnet.txt sert pour la définition des touches de fonctions f1 a f10
+;
+;*--------
+;ouverture du module telnet
+;--------
+;public procedure topen
+;
+;*--------
+;fermeture de ytelnet
+;--------
+;public procedure tclose
+;
+;*--------
+;renvoi 1 si c'est la fin de telnet
+;--------
+;public function ptr tend
+;
+;*--------
+;fixe la taille de l'afficheur du ytelnet
+;--------
+;public procedure tmaxcar( wmaxcar )
+;1	wmaxcar x
+;
+;*--------
+;passe en pc8
+;--------
+;public procedure tpc8
+;
+;*--------
+;passe en ansi
+;--------
+;public procedure tansi
+;
+;*--------
+;informe que l'emulation de terminal renvoi CR puis LF lorsqu'on tape sur la 
+;touche return.
+;
+;certain emulateur de terminal au lieu d'envoyer CR seulement lorsqu'on tape sur 
+;la touche return, ils envoient aussi a la suite le code LF 
+;--------
+;public procedure treturnwithCRLF
+;
+;*--------
+;informe que l'emulation de terminal renvoi simplement CR lorsqu'on tape sur la 
+;touche return.
+;--------
+;public procedure treturnnoCRLF
+;
+;*--------
+;envoi effacement ecran au ytelnet
+;--------
+;public procedure tcls
+;
+;*--------
+;envoi positionnement du curseur au ytelnet
+;tlocate( lig , col )   met le curseur à la ligne lig col ( à partir de 1,1)
+;--------
+;public procedure tlocate(lig,col)
+;1	lig	n
+;1	col	n
+;
+;*--------
+;envoi un texte au ytelnet
+;tdisplay( texte )  display texte avec un saut de ligne
+;tdisplay( texte ,0 ) display texte sans saut de ligne
+;tdisplay( texte , 10 ) display avec 10 saut de lignes
+;--------
+;public procedure tdisplay(txt,sautdeligne)
+;1	txt	u
+;1  sautdeligne x = 1
+;
+;*--------
+;envoi saut de ligne
+;--------
+;public procedure tdisplay0d0a
+;
+;*--------
+;input texte sur le ytelnet
+;tinput ( variable) input 
+;							si variable est alpha , la saisie est alpha
+;							si varaible est numerique , la saisie autorise que 
+;							0..9 - , 
+;							le . est traduit en ,
+;			Harmony.Key est positionné 
+;			après chaque input il faut tester l'état de tend pour savoir
+;			si on est sorti de l'input a cause d'une fin de connexion
+;			si c'est le cas, il faut abandonner le traitement en cours
+;			et sortir du programme
+;
+;tansi et tpc8 permet de travailler en mode ansi ou pc8
+;--------
+;public function ptr tinput(&txt)
+;1	txt	u
+;
+;*--------
+;get char bloquant
+;--------
+;public function char tgetbchar
+;
+;*--------
+;debut gras
+;--------
+;public procedure tbold
+;
+;*--------
+;fin gras
+;--------
+;public procedure teobold
+;
+;*--------
+;debut rever
+;--------
+;public procedure trever
+;
+;*--------
+;fin rever
+;--------
+;public procedure teor
+;
+;*--------
+;debut soulignee
+;--------
+;public procedure tunderscore
+;
+;*--------
+;fin soulignee
+;--------
+;public procedure teounderscore
+;
+;*--------
+;passe en pas de delai
+;c'est pour le answerback, on arme un time out,
+;si on a pas de reponse c'est que le ytelnet ne traite pas la commande
+;answerback et on sort
+;--------
+;public procedure tnodelay 
+;
+;*--------
+;passe en mode delai	on attend la caractere
+;--------
+;public procedure tdelay
+;
+;*--------
+;envoi une command answerback et renvoi la reponse
+;sur le ytelnet on peut mettre une chaine de caracteres qui peut 
+;être intéroger par programme, on peut mettre par exemple 
+;une suite de commande comme par exemple pc8/ansi, le type de ytelnet
+;l'adresse internet 
+;--------
+;public procedure tanswerback( &txt )
+;1	txt	A
+;
+;*--------
+; envoi un message dans le fichier de debug /divalto/sys/ytelnet.log
+;--------
+;public procedure tdebug(txt,err)
+;1		txt	a
+;1		err	6,0
+;
+;*--------
+; durrée du time out en minutes
+;par defaut 0 : pas de duré, la connexion reste en place temps que la liaison est 
+;active
+;sinon si au bout de N minutes, il n'y a toujours pas eu de frape de touche alors 
+;la connexion est coupée
+;--------
+;public procedure ttimeout(wdureetimeout)
+;1		wdureetimeout N
+;
+;*--------
+;charger le fichier des touches
+;fic doit contenir le nom d'un fichier simple exemple 
+; "vt110"
+;--------
+;public function ptr readfiletouche(fic)
+;1		fic	a
+;
+;*--------
+;passe en mode generation d'un fichier de touche
+;fic doit contenir le nom d'un fichier simple exemple 
+; "vt110"
+;--------
+;public procedure tinputtouche(fic)
+;1	fic	a
+;
+;*--------
+
+;Include 	"GTQC000.dhsp"
+
+module ytelnet.dhop
+module	"GTTM000.dhop"
+module	"GTPM000.dhop"
+Module   "GTPMSTOC.dhop" 
+Module   "GTPMFIC.dhop" 
+
+Public Record DDSYS.dhsd SYSTEM
+
+
+; Module des programmes radio Diva
+Public record		"gtfdd.dhsd"	soc					 			; Dossier - informations g3
+public record 		"gtfdd.dhsd" 	xz g3xz					 		; 
+public recordsql	'a5rsdos.dhoq'	Utilisateur ci_muser		 	; Record sur la table des utilisateurs 
+public recordsql	'gtrstab.dhoq'	Depot 		ci_depot			; Record sur la table des dépôts
+public recordsql	'gtrsArt.dhoq'	Article     ci_art 		 	; Record Article
+public recordsql  'ci_recordsql.dhoq'	ci_radioStock	
+public recordsql  'ci_recordsql.dhoq'	ci_MaxRadioStockNoSaisie maxNoSaisie
+
+;* 
+;* 	  FONCTION Utilisé POUR LES CODES BARRES à 2 DIMENSIONS
+;* 
+public function char inputRad(lig, col)
+
+; Lecture d'un code barre sans affichage écran
+; Remplacement des caracteres spéciaux par '#' (code 2D)
+1	chaine		S			; Chaine reconstruite
+1	charLu		B			; Caractère lu
+1  lig         N = 1
+1  col         N = 1
+1	tmp			5
+beginf
+	tlocate( lig , col )
+	chaine = ''
+	charLu = 0
+	Harmony.Key = 0
+	loop charLu = 0 or ( charLu=10 and Harmony.Key = K_RETURN)
+		charLu = tgetbchar()	 
+		if tend | tclose | freturn '' |	endif
+		if(charLu = 8)  | Harmony.Key = K_SUP    | endif 
+		if(charLu = 10) | Harmony.Key = K_DOWN   | endif 
+		if(charLu = 27) | Harmony.Key = K_ESCAPE | endif 
+		if(charLu = 29) | Harmony.Key = K_RIGHT  | endif 
+	endloop
+	
+	loop Harmony.Key not in(K_RETURN, K_F1, K_F2, K_F3, K_F4,  K_F5, K_F6,  K_F7, K_F9,  K_F10, K_DOWN, K_UP, K_RIGHT, K_LEFT)
+		if Harmony.Key  = K_SUP
+			if length(chaine) = 1
+				chaine = ''
+			else
+				chaine = [left(chaine, length(chaine)-1)				
+			endif
+		else
+			chaine = [left(chaine) charLu
+		endif
+		tlocate( lig , col-1 )
+		tdisplay("                    ",0)
+		tlocate( lig , col )
+		tdisplay(chaine,0)
+
+		charLu = tgetbchar()
+		if tend | tclose | freturn '' |	endif
+		if(charLu = 8)  | Harmony.Key = K_SUP    | endif 
+		if(charLu = 10) | Harmony.Key = K_DOWN   | endif 
+		if(charLu = 27) | Harmony.Key = K_ESCAPE | endif 
+		if(charLu = 29) | Harmony.Key = K_RIGHT  | endif 
+	endloop
+	freturn chaine 
+endf
+
+;* 
+;* 	 PROCEDURE POUR MAQUETTAGE TEXTE SUR ECRAN
+;*
+public procedure PrintRad(Txt,Ligne,Col,Saut,SuppLigne)
+
+; Display d'un texte en Ligne, Colonne, Saut, Suppression de la ligne d'abord
+1	Txt			S							; Texte à afficher
+1	Vide			S							; Texte à afficher
+1	Ligne			N							; Ligne où s'affiche le texte
+1	Col			N							; Colone où s'affiche le texte
+1	Saut			N = 0						; Saut à la ligne
+1	SuppLigne	N = 1						; Supprime la ligne avant l'affichage de la nouvelle ligne
+beginp
+	if Ligne < 1	| Ligne = 1	| endif
+	if Col < 1		| Col = 1	| endif
+	if Saut < 1		| Saut = 0	| endif
+	tlocate(Ligne,Col)
+	if SuppLigne
+		tdisplay(Vide,Saut)
+		tlocate(Ligne,Col)
+	endif
+	tdisplay(Txt,Saut)
+
+;	Mecrad.EcranRad(Ligne) = Txt													 	; Pour garder en mémoire les lignes écran en cours
+;	ping("zechangeradio",Mecrad)
+	preturn
+endp
+
+;* 
+;* 	 PROCEDURE DE FIN
+;*
+public procedure FinRadio
+
+; Procédure de déconnexion pour la radio
+1	Ilig				1,0	  							; Indice nombre de ligne à la radio
+1	Vide				S									; Texte à afficher
+1	NbLig				1,0 = 8							; Nombre de ligne à effacer en fin de radio
+beginp
+	;fermeture 
+	for Ilig = 1 to nbLig							; Efface pour le fun les lignes pour ne pas laisser des lignes de menu
+		printrad(Vide,Ilig,1,,1)
+	next
+	tcls | tlocate(1,1)
+	printrad("AU REVOIR...",1,1,,1)
+	tclose
+endp
+
+
+;* 
+;* 	  PROCEDURE D'ENVOI DU MESSAGE AVEC TEMPS D'AFFICHAGE
+;* 
+public procedure MessageRadio(txt,Ligne,pause,SuppLigne,mode,bipErr)
+
+;
+; Message radio à afficher
+;
+1	Txt			S							; Texte à afficher
+1	Vide			S							; Texte à afficher
+1	Ligne			N = 4					  	; Ligne ou s'affiche le message
+1	Pause			X = 2						; Temps d'affichage en seconde
+1	SuppLigne	N = 1						; Supprime la ligne avant l'affichage de la nouvelle ligne
+1	mode			B = false				; Mode = false on fait une pause, true on attend la saise de la touche esc
+1	bipErr		X = 5						; Envoie un bip à la radio pour les messages d'erreurs
+1	car			2							; Saisie
+1	i				X 							; compteur boule
+beginp
+
+	if mode = false
+	;	mode = Condition(getValConstante('MSGERR') = '1',true,false)
+	endif
+
+	;
+	; Bip speaker !!
+	;
+	for i = 1 to bipErr step 1
+		tlocate(1, 1)
+		tdisplay($7)
+		sleep(100)
+	next
+	tcls | tlocate(1,1)
+	if Ligne < 1	|	Ligne = 1	| endif
+	if Pause < 1	|	Pause = 2	| endif
+	tlocate(Ligne,1)
+	if SuppLigne
+		tdisplay(Vide)
+		tlocate(Ligne,1)
+	endif
+	tdisplay(Txt)
+
+	if mode = false
+		Pause *= 1000
+		sleep Pause
+	else
+		repeat
+			car = tgetbchar
+		until Harmony.Key in (K_ESCAPE,K_F9,K_F4)
+	endif
+
+	tlocate(Ligne,1)														; Pour le moment affichage du message sur la dernière ligne pendant x secondes et effacement du message
+	tdisplay(Vide)
+
+;	pingreceive("zechangeradio",Mecrad)										  ; Pour afficher les anciennes ligne écran 
+;	PrintRad(Mecrad.EcranRad(Ligne),Ligne,1)
+	preturn
+endp
+
+;* 
+;* 	  Renvoie 0 si aucune saisie n'est en cours pour cet utiliseur, 
+;* 	  
+;* 
+public function int saisieEnCours(user)
+1	user						S	= ''			  ; utilisateur qui fait la saisie
+beginf
+	ci_radioStock.Init()
+	ci_radioStock.Where.PourUser(user)
+	if ci_radioStock.Select() <> 0
+		Freturn 	ci_radioStock.ci_nosaisie
+	else
+		Freturn 0
+	endif
+endf
+
+;* 
+;* 	  top à N les enregistrements concernant la saisie n° XXX passée en paramètre 
+;* 
+procedure annulerSaisieEnCours(noSaisie)
+1  noSaisie					8,0				  ; n° de saisie
+BeginP
+	ci_radioStock.Where.PourNoSaisie(noSaisie)
+	ci_radioStock.InitForUpdateWhere()
+	ci_radioStock.ci_etat = 'S'
+	ci_radioStock.UpdateWhere()
+endP
+
+
+;* 
+;* 	  renvoie 0 si le dépot est géré par emplacement
+;* 
+public function int depotGererParEmplacement(depot)
+recordsql	'gtrstab.dhoq'	Depot depot       						; Record sur la table des dépôts	origine
+beginf
+	if depot.LieuCod = 0 or depot.DepoPrinc = 2
+		freturn 0
+	else
+		freturn 1
+	endif
+endf
+
+;* 
+;* 	  renvoie 1 si gestion en quantité, 2 si Gestion par n° de série, et 3 par numéro de lot
+;* 
+
+public function int ArticleGererParNumero(article)
+recordsql	'gtrsArt.dhoq'	Article article
+
+beginf
+	freturn article.GICOD
+endf
+
+;*
+;* affiche le menu d'un article
+;*
+procedure afficherMenuArticle(noLigne, ci_articleCourant, depotOrigine, depotDestination, quantite, emplacementOrigine, emplacementDestination, noLotSerie, nature, modif)
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 						; Record sur la table des dépôts	origine
+recordsql	'gtrstab.dhoq'	Depot depotDestination 					; Record sur la table des dépôts	destination
+recordsql	'gtrsArt.dhoq'	Article ci_articleCourant				; Record sur la table des articles
+1  noLigne						12,D2											; n° de ligne
+1	quantite						> ci_dico.dhsd ci_qte	=1
+1	modif    					1,0							=1				; modification quantité = 1  : autre > 1
+1  emplacementOrigine 		> gtfdd.dhsd lieu	
+1  emplacementDestination  > gtfdd.dhsd lieu 
+1 	noLotSerie					> gtfdd.dhsd serie 
+1 	nature						> gtfdd.dhsd nst
+
+beginp
+	tcls | tlocate(1,1)
+	if depotdestination.depo <> '' and depotOrigine.depo <> ''
+		printrad("* Trs: " & depotorigine.depo && " vers " & depotdestination.depo & "       No:" & format("<009>", noLigne),1,1,1 )
+	elsif depotOrigine.depo <> ''
+		printrad("* Sortie: " & depotOrigine.depo & "       No:" & format("<009>", noLigne), 1, 1, 1)
+	else
+		printrad("* Entree: " & depotDestination.depo & "       No:" & format("<009>", noLigne), 1, 1, 1)
+	endif
+	printrad("*-----------------------------*",2,1,1)
+	if ci_articleCourant.ref <> ''
+		printrad("Article :" & ci_articleCourant.Ref, 3, 1, 1)
+			if modif = 1
+ 				trever() | printrad("Qte     :"& format("<00009>", quantite), 4,1,1) | teor
+				printrad("Article suivant ou Quantite:", 13, 1, 1)
+			else
+				printrad("Qte     :"& format("<00009>", quantite), 4,1,1)
+			endif
+			if depotOrigine.Depo <> '' and depotGererParEmplacement(depotOrigine)=0		; si le depot d'origine gere les emplacements
+				if modif = 2
+					trever() | printrad("Empl Ori:"& emplacementOrigine , 5,1,1) | teor
+					printrad("Emplacement d'origine:", 13, 1, 1)
+				else
+					printrad("Empl. Ori:"& emplacementOrigine , 5,1,1)
+				endif
+			endif
+			if depotDestination.Depo <> '' and  depotGererParEmplacement(depotDestination)=0      ; si le depot de destination gere les emplacements
+				if modif = 3
+					trever() | printrad("Empl Dst:"& emplacementDestination , 6,1,1) | teor
+					printrad("Emplacement destination:", 13, 1, 1)
+				else
+					printrad("Empl. Dst:"& emplacementDestination , 6,1,1)
+				endif
+			endif
+			if ArticleGererParNumero(ci_articleCourant) <> 1
+				if modif = 4
+					trever() |printrad("lot/seri:" & noLotSerie, 7,1,1)| teor
+					printrad("No de lot ou de série:", 13, 1, 1)
+				else
+					printrad("lot/seri:" & noLotSerie, 7,1,1)
+				endif
+			endif
+			if modif = 5
+				trever() |printrad("Nature:" & nature, 8,1,1)| teor
+				printrad("Nature:", 13, 1, 1)
+			else
+				printrad("Nature:" & nature, 8,1,1)
+			endif
+			printrad("*-----------------------------*",12,1,1)
+	else
+		printrad("Article :", 13,1,1) 
+	endif
+	printrad("*-----------------------------*",15,1,1)
+	printrad("F1:Aide - F2:Modif -Esc:Quitter",16,1,1)
+endp
+
+;* 
+;* 	  Fonction d'enregistrement d'un mouvement de stock dans la table temporaire
+;* 
+public function int controleArticle(ci_article, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, &quantite)
+recordsql 'gtrsArt.dhoq'	Article	 ci_article
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 				; Record sur la table des dépôts
+recordsql	'gtrstab.dhoq'	Depot depotDestination 			; Record sur la table des dépôts
+1	quantite						> ci_dico.dhsd ci_qte			; quantite
+1  emplacementOrigine 		> gtfdd.dhsd lieu					; emplacement sur depot origine			  
+1  emplacementDestination  > gtfdd.dhsd lieu 				; emplacement sur depot destination
+1 	noLotSerie					> gtfdd.dhsd serie 				; n° de lot ou n° de saisie
+1 	nature						> gtfdd.dhsd nst					; nature de stock
+1 	reference					> gtfdd.dhsd GRREF				; reference article
+1  qteStock                > gtfdd.dhsd stqte = 0
+1  qteRes						> gtfdd.dhsd stqte = 0
+1  saisie						10
+1 tierori						> gtfdd.dhsd tiers = ' '
+1  sousRef1						> gtfdd.dhsd sref1 = ""
+1  sousRef2						> gtfdd.dhsd sref2 = ""
+1  i                       1,0
+
+beginf
+	; controle du depot d'origine
+	if depotOrigine.Depo <> '' and depotGererParEmplacement(depotOrigine) = 0 and emplacementOrigine	= ''
+		MessageRadio "Emplacement Origine inconnu"
+		Freturn -1
+	endif
+																  
+	if depotDestination.Depo <> '' and depotGererParEmplacement(depotDestination) = 0 and emplacementDestination	= ''
+		MessageRadio "Emplacement destination inconnu"
+		Freturn -1
+	endif
+
+	if ArticleGererParNumero(ci_article) <> 1 and noLotSerie = ' '
+		MessageRadio "N° lots/serie manquant"
+		Freturn -1
+	endif
+
+	if depotOrigine.Depo <> ''
+		; vérification quantité
+		qteStock=Stock_Calculer_Quantite_EnStock_SQL(ci_article.Ref, sousRef1, sousRef2, depotOrigine.Depo, noLotSerie, nature, tierori, emplacementOrigine, 0,1)
+		if qteStock < quantite
+			for i = 1 to 5 step 1
+				tlocate(1, 1)
+				tdisplay($7)
+				sleep(100)
+			next
+			afficherMenuArticle(0, ci_article, depotOrigine, depotDestination, quantite, emplacementOrigine, emplacementDestination, noLotSerie, nature, 1)
+  	   	printrad("*-----------------------------*",10,1,1)
+  	   	printrad("*            ERREUR           *",11,1,1)
+  	   	printrad("*-----------------------------*",12,1,1)
+			if qteStock = 0
+				if(noLotSerie <> '')
+					printrad("Erreur saisie empl ou n lot!  ", 13, 0)
+				else
+					printrad("Erreur saisie emplacement     ", 13, 0)
+				endif
+			else
+				printrad("Qte saisie supérieure au stock", 13, 0)
+			endif
+			printrad("Dispo :" & format('<0009>', qteStock) & "- saisie : ", 14, 0) 
+			trever | printrad(format('<0009>', quantite), 14, 21) | teor
+			saisie = inputrad(14, 21)
+			if saisie <> '          ' and isnum(saisie) 
+				quantite = saisie
+			endif
+			Freturn 1 ;validation forcée
+		endif
+	endif
+	tdisplay($7)
+	Freturn 0
+endf
+
+;* 
+;* 	  Fonction d'enregistrement d'un mouvement de stock dans la table temporaire
+;* 
+public function int CreerLigStock(noSaisie, noligne, user, ci_article, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite, &controleForce)
+recordSql 'ci_recordsql.dhoq' ci_radiostock maxnoLig
+recordsql 'gtrsArt.dhoq'	Article	 ci_article
+1  noSaisie					8,0				  						; n° de saisie
+1  noLigne					8,0				  						; n° de ligne
+1	user						S	= ''			  						; utilisateur qui fait la saisie
+1	type						S 	= 'IST'	  	  						; type d'opération = IO ou IST
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 				; Record sur la table des dépôts
+recordsql	'gtrstab.dhoq'	Depot depotDestination 			; Record sur la table des dépôts
+1	quantite						> ci_dico.dhsd ci_qte			; quantite
+1  emplacementOrigine 		> gtfdd.dhsd lieu					; emplacement sur depot origine			  
+1  emplacementDestination  > gtfdd.dhsd lieu 				; emplacement sur depot destination
+1 	noLotSerie					> gtfdd.dhsd serie 				; n° de lot ou n° de saisie
+1 	nature						> gtfdd.dhsd nst					; nature de stock
+1 	reference					> gtfdd.dhsd GRREF				; reference article
+1  action						1,0
+1  controleForce           2, 0
+
+beginf
+	if controleForce <= 0 
+		controleForce = controleArticle(ci_article, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite)
+		if controleForce = -1
+			Freturn -1
+		endif
+	endif
+
+	;reference = ci_article.ref
+	;Tunnel_Disponible_Interroger(reference, depotOrigine.Depo, nature) 
+
+	tcls | tlocate(1,1)
+  	printrad("*-----------------------------*",5,1,1)
+	printRad("   Enregistrement en cours     ",6,1,0,1)
+  	printrad("*-----------------------------*",7,1,1)
+
+	if noSaisie = 0
+		maxNoSaisie.init()
+		maxNoSaisie.orderBy.par_noSaisie()
+		if maxNoSaisie.Select()	= 1
+			  noSaisie = maxNoSaisie.ci_noSaisie+1
+		else
+			noSaisie = 1
+		endif
+		noligne = 1
+	endif
+
+	ci_radioStock.Where.PourNoLigne(noSaisie, noligne)
+	; action vaut 1 si update, 0 si insert
+	action = ci_radioStock.select()
+	if action = 0	;on renseigne le n° de ligne et le n° de saisie
+		maxnoLig.Where.PourNoSaisie(noSaisie)
+		maxnoLig.OrderBy.parNumLigneDesc()
+		if maxnoLig.Select() <> 0
+			noligne = maxnoLig.ci_nolig+1
+		endif
+		ci_radioStock.ci_noSaisie = noSaisie
+		ci_radioStock.ci_nolig = noligne
+ 	endif
+
+	ci_radioStock.ci_user     = user
+	if depotDestination.Depo = ''	
+		ci_radioStock.ci_type     = 'IST'
+	elsif depotOrigine.Depo = ''
+		ci_radioStock.ci_type     = 'JST'
+	else
+	  ci_radioStock.ci_type     = 'IO'
+	endif
+	ci_radioStock.ci_depo     = depotDestination.Depo
+	ci_radioStock.ci_blasdepo = depotOrigine.Depo
+	ci_radioStock.ci_lieu_ori = emplacementOrigine
+	ci_radioStock.ci_lieu_des = emplacementDestination
+	ci_radioStock.ci_ref      = ci_article.Ref
+	ci_radioStock.ci_serie    = noLotSerie
+	ci_radioStock.ci_qte      = quantite
+	ci_radioStock.ci_etat		= 'E'
+	ci_radioStock.ci_dats     = today
+	ci_radioStock.ci_hres		= time(2)
+	ci_radioStock.ci_nature = nature
+
+	if	action=1
+		ci_radioStock.Update()
+	else
+		ci_radioStock.Insert()
+	endif
+
+	Freturn noSaisie
+endf
+
+;* 
+;* 	  Fonction d'existence du dépôt
+;* 
+public function char IdentDepot(depot)
+1	depot				> gtfdd.dhsd depo							; dépôt origine
+
+beginf
+	ci_depot.init()
+	MZ.Dos = ci_muser.Dos
+	ci_depot.where.exists(depot)
+	if ci_depot.Select() = 0
+		Freturn(0)
+	else
+		Freturn(1)
+	endif
+endf
+
+;* 
+;* 	  Fonction d'existence de la référence article
+;* 
+public function char IdentArticle(refArticle)
+1	refArticle		> gtfdd.dhsd ref							; reference article
+
+beginf
+	ci_art.init()
+	MZ.Dos = ci_muser.Dos
+	ci_art.where.exists(refArticle)
+	if ci_art.Select() = 0
+		Freturn(0)
+	else
+		Freturn(1)
+	endif
+endf
+
+
+public function int initInfoSaisie(ci_article, &noLotSerie, &nature, depotOrigine, depotDestination, &emplacementOrigine, &emplacementDestination, &quantite)
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 						; Record sur la table des dépôts	origine
+recordsql	'gtrstab.dhoq'	Depot depotDestination 				
+
+; Record sur la table des dépôts	destination
+recordsql	'gtrsArt.dhoq'	Article ci_article						; Record sur la table articles
+recordsql	'gtrsArt.dhoq'	InfoDepo infoEmplacement				; Record sur la table le stock article sur depot
+1	quantite						> ci_dico.dhsd ci_qte
+1  emplacementOrigine 		> gtfdd.dhsd lieu	
+1  emplacementDestination  > gtfdd.dhsd lieu 
+1 	noLotSerie					> gtfdd.dhsd serie 
+1 	nature						> gtfdd.dhsd nst
+1 modif                    1,0
+
+beginF
+	;chargement valeurs par défaut
+	nature = 'N'
+	quantite = 1
+	emplacementOrigine = ' '
+	emplacementDestination = ' '
+	noLotSerie = ' ' 
+	modif = 1
+	; si le depot d'origine est géré par emplacement
+	if depotOrigine.depo <> '' and depotGererParEmplacement(depotOrigine)	 = 0
+		infoEmplacement.where.removeCondition("LIRE_DEPO")
+		infoEmplacement.where.Equal_Ref(ci_article.ref)			  
+		infoEmplacement.where.Equal_Depo(depotOrigine.Depo)
+		infoEmplacement.where.Equal_Nst(nature)
+		infoEmplacement.where.AddCondition("LIRE_DEPO", "Equal_Ref AND Equal_Depo and Equal_Nst")
+		if infoEmplacement.select() = 1
+			emplacementOrigine =  infoEmplacement.lieu
+		else 
+			modif = 2
+		endif
+	endif
+
+	; si le depot de destination est géré par emplacement
+	if depotdestination.depo <> '' and depotGererParEmplacement(depotdestination) = 0
+		infoEmplacement.where.removeCondition("LIRE_DEPO")
+		infoEmplacement.where.Equal_Ref(ci_article.ref)			  
+		infoEmplacement.where.Equal_Depo(depotdestination.Depo)
+		infoEmplacement.where.Equal_Nst(nature)
+		infoEmplacement.where.AddCondition("LIRE_DEPO", "Equal_Ref AND Equal_Depo and Equal_Nst")
+		if infoEmplacement.select() = 1
+			emplacementDestination =  infoEmplacement.lieu
+		else 
+			if modif =1 
+				modif = 3
+			endif
+		endif
+	endif
+
+	; si l'article est géré par n° de lot ou de serie
+	if ArticleGererParNumero(ci_article) <> 1
+		if modif = 1
+			modif = 4
+		endif
+	endif
+	if(modif <> 1)
+		printrad($6,7,1,,0)
+		sleep(100)
+	endif
+	Freturn modif
+endF
+
+;* 
+;* 	  LANCEMENT DU 1ER ECRAN : ECRAN D'IDENTIFICATION
+;* 
+public function char IdentRadio
+
+;
+; Identification utilisateur radio
+;
+1	UserRadioBadge		> a5dd.dhsd badge							; Login user pour la radio
+1	fini				X = false	 									; indique quand sortir de la radio
+
+beginf
+label debutIdent
+	tcls | tlocate(1,1)
+	;
+	; Ecran d'identification par saisie badge
+	;
+	printrad("      *----------------* ",1,1,1)
+	printrad("      |                | ",2,1,1)
+	printrad("      | Identification | ",3,1,1)
+	printrad("      |                | ",4,1,1)
+	printrad("      |    DIVALTO     | ",5,1,1)
+	printrad("      |                | ",6,1,1)
+	printrad("      |    ABSOGER     | ",7,1,1)
+	printrad("      |                | ",8,1,1)
+	printrad("      *----------------* ",9,1,1)
+	trever
+	printrad("N° du BADGE : ",12,1)
+	teor
+	tdisplay(" ",0)
+	UserRadioBadge =  " "
+	tinput(UserRadioBadge)
+	UserRadioBadge = fstring("U",UserRadioBadge)
+	if tend 
+		freturn(0) 
+	endif
+	if UserRadioBadge = "f" or UserRadioBadge = "F" or Harmony.Key = K_ESCAPE or Harmony.Key = K_F9 or Harmony.Key = K_F4
+		fini = true
+		freturn(0)
+	else
+		if UserRadioBadge = '' | goto debutIdent | endif
+		;
+	   ; Vérification du N° badge de l'utilisateur (modification de a5rsdosu.dhsq => Clause Where pour_badge)
+	   ;
+		ci_muser.Init()
+		ci_muser.Where.pour_badge(UserRadioBadge)	  
+		if ci_muser.Select() = 0
+			tcls | tlocate(1,1)
+			MessageRadio("UTILISATEUR INCONNU")
+			goto debutIdent
+		endif
+	endif
+
+	mz.Dos  = ci_muser.Dos
+	mz.Depo = ci_muser.Depo
+	mz.Etb  = ci_muser.Etb
+	
+	ProgramSetComment(['RADIO-MENU-'ci_muser.userX])
+	freturn(1)
+endf
+
+
+
+;* 
+;* 	  Creer le BL dans DIVALTO
+;* 
+public procedure CreerBLStock(noSaisie)
+1 noSaisie       8,0										; n°de saisie
+1 retour         8,0
+1 resultatHMP	  S	
+1 Param			  S
+1 Resultat		  S
+1 St 				  5,0
+1 PINO			  S
+
+1 ReaderId_CI_RadioStock L
+hfile 	"gtfdd.dhsd"	   gtfi	gtfi 	 				; fichier pivot pour intégration de pièce
+record  		"gtfdd.dhsd"	ipar							; donneur d'ordre
+record  		"gtfdd.dhsd"	ent							; entete
+record  		"gtfdd.dhsd"	mouv							; lignes
+record  		"gtfdd.dhsd"	mvtl							; ventilations 
+beginP
+	ipar = " "
+	ent  = " "
+	soc  = " "
+	retour  = seek_soc(mz.Dos, 0, 0, 0)
+	; lecture des enregistrements de CI_radioStock concernant le n° de saisie noSaisie
+
+	ReaderId_CI_RadioStock = CI_RadioStock.ReaderOpen()
+	ci_radioStock.Where.PourNoSaisie(noSaisie)
+	ci_radioStock.ReaderSelect(ReaderId_CI_RadioStock)
+	Loop ci_radioStock.ReaderNext(ReaderId_CI_RadioStock)=1
+		if ipar = " "
+			; ecriture enreg IPAR
+			ipar.Ce1 	= "I"
+			ipar.Trait 	= "C"						; création
+			ipar.dos	 	= mz.Dos					; dossier
+			ipar.etb    = mz.Etb					; etablissement
+			ipar.TiCod	= "I"						; type interne
+			ipar.PiCod 	= 3						; bl
+			iwrite(gtfi, ipar)
+			
+			;ecriture enreg ENT
+			ent.Ce1	 = "A"							  
+			ent.Ce4	 = 1										   ; etat 1 : actif
+			ent.tiers = soc.inno								   ; tierInterne
+			ent.PiRef = ci_muser.User
+		 	ent.Op 	 = ci_radioStock.ci_type			   ; type d'OP
+			if ci_radioStock.ci_blasdepo <> '' and ci_radioStock.ci_depo <> ''
+				ent.Depo  = ci_radioStock.ci_blasdepo 		; depot destination
+		   	ent.BlasDepo = ci_radioStock.ci_depo   	; depot origine
+			else
+				if ci_radioStock.ci_depo <> ''
+			   	ent.Depo = ci_radioStock.ci_depo   	; depot origine
+				else
+					ent.Depo = ci_radioStock.ci_blasdepo  ; depot destination
+				endif
+			endif
+			iwrite(gtfi, ent)
+		endif
+	
+		; écriture MOUV
+		mouv = " "
+		mouv.Pcod(1) = 1 					
+		mouv.Ce1   = "C"
+		mouv.Ce2   = "1" 										; ligne article
+		mouv.ref   = ci_radioStock.ci_ref				; référence 
+	 	mouv.BlQte = ci_radioStock.ci_qte 				; qté		
+		mouv.Op    = ci_radioStock.ci_type
+		mouv.Sens  = 2
+
+		;renseigner de l'unité
+		IdentArticle(mouv.ref)
+		mouv.venun = ci_art.StUn
+	 	
+		iwrite(gtfi, mouv)
+	
+		; ecriture MVTL sortie sur depot origine
+		mvtl = " "
+		mvtl.Ce1 = "V"
+		if ci_radioStock.ci_lieu_ori <> '' 
+			mvtl.Lieu = ci_radioStock.ci_lieu_ori
+		else
+			mvtl.Lieu = ci_radioStock.ci_lieu_des
+		endif
+		mvtl.serie = ci_radioStock.ci_serie				; sous référence ou n° de série
+		mvtl.Qte = ci_radioStock.ci_qte 
+ 		mvtl.Sens = 2				
+		
+		iwrite(gtfi, mvtl)
+	endloop
+
+	hclose(gtfi)
+	if Tunnel_Integration_Piece(gtfi.name, 1, 1)=0
+   	PongReceive('g3xz',g3xz)
+      MessageRadio("Pièce no " & nospaces(g3xz.pino) & " intégrée")
+	endif
+	hopen(gtfi, "R")
+	; marquage des lignes CI_RADIOSTOCK comme integrées
+	ci_radioStock.Where.PourNoSaisie(noSaisie)
+	ci_radioStock.InitForUpdateWhere()
+	ci_radioStock.ci_etat = 'I'
+	ci_radioStock.UpdateWhere()
+endp
+
+;* 
+;* 	  LANCEMENT DU MENU saisie d'article
+;* 
+public function int nextModif(modif, depotOrigine, depotDestination, article)
+1	modif    					1,0
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 						; Record sur la table des dépôts	origine
+recordsql	'gtrstab.dhoq'	Depot depotDestination 					; Record sur la table des dépôts	destination
+recordsql	'gtrsArt.dhoq'	Article article							; Record sur la table des articles
+
+beginf
+	switch modif 
+		case 0 | goto emplacementOrigine
+		case 2 | goto emplacementDestination
+		case 3 | goto numeroSerieLot
+		case 4 | goto nature
+		default | freturn 1
+	endSwitch
+
+	; gestion modif emplacement Origine
+	label emplacementOrigine
+	if depotOrigine.Depo <> '' and depotGererParEmplacement(depotOrigine) = 0
+		freturn 2
+	endif
+
+	; gestion modif emplacement Destination
+	label emplacementDestination
+	if depotDestination.Depo <> '' and depotGererParEmplacement(depotDestination) = 0
+		freturn 3
+	endif
+
+	; gestion modif emplacement N° serie ou de lots
+	label numeroSerieLot
+	if ArticleGererParNumero(article) <> 1
+		freturn 4
+	endif
+
+	; gestion modif emplacement Nature
+	label nature
+	freturn 5
+
+	freturn 1
+endf
+
+public procedure AfficherAide(depotOrigine, depotDestination, noSaisie)
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 						; Record sur la table des dépôts	origine
+recordsql	'gtrstab.dhoq'	Depot depotDestination 					; Record sur la table des dépôts	destination
+1  noSaisie          		12,D2											; n°de saisie
+
+recordsql 'ci_recordsql.dhoq'	ci_radioStock
+1 ReaderId_CI_RadioStock L
+1 ligne 						 9,0
+1 saisie						 10					
+beginP
+	if depotdestination.depo <> ''
+		printrad("* Trs: " & depotorigine.depo && " vers " & depotdestination.depo,1,1,1)
+	else
+		printrad("* Sortie: " & depotOrigine.depo ,1,1,1)
+	endif
+	printrad("*----------------------------*",2,1,1)
+	printrad("F1: affiche cette aide        ",3,1,1)
+	printrad("F2: passe en mode modif       ",4,1,1)
+	printrad("    permet de modifier l'empla",5,1,1)
+	printrad("    cement source ou cible, le",6,1,1)
+	printrad("    n° de lot/serie ou la nat.",7,1,1)
+	printrad("Esc:annule la saisie en cours ",8,1,1)
+	printrad("F4: termine la saisie en cours",9,1,1)
+	printrad("    et l'enregistre dans      ",10,1,1)
+	printrad("    divalto                   ",11,1,1)
+	printrad("*----------------------------*",14,1,1)
+	printrad("saisie n°:"& format("<0000009>", noSaisie) ,15,1,1)
+	printrad("faite par "& ci_muser.user, 16,1,1)
+	printrad("*----------------------------*",18,1,1)
+
+	ligne=17
+	ReaderId_CI_RadioStock = CI_RadioStock.ReaderOpen()
+	ci_radioStock.Where.PourNoSaisie(noSaisie)
+	ci_radioStock.ReaderSelect(ReaderId_CI_RadioStock)
+	Loop ci_radioStock.ReaderNext(ReaderId_CI_RadioStock)=1
+		if ligne=17
+			printrad("le "& formatd( 'J0/M0/AAAA',ci_radioStock.ci_dats) && " à " & format('<99:99:99>', ci_radioStock.ci_hres), 16,1,1)
+			printrad("|      ARTICLE      |   Qte  |",19,1,1)
+			printrad("|-------------------|--------|",20,1,1)
+			ligne = 21
+		endif
+			printrad('|'&Left(ci_radioStock.ci_ref, 19) & format('|<0 009V99>|', ci_radioStock.ci_qte),ligne,1,1)
+			ligne = ligne+1
+	endLoop
+	printrad('Appuyez sur une touche ...',ligne,1,1)
+	saisie=inputRad(10, 1)
+endP
+
+;* 
+;* 	  Charge les infos de la ligne xxx
+;* 
+public procedure affArticle(noSaisie, &noLigne, &article, &quantite, &emplacementOrigine, &emplacementDestination, &noLotSerie, &nature)
+1  noSaisie          		12,D2											; n°de saisie
+1  noLigne						12,D2	  										; n° de ligne
+recordsql	'gtrsArt.dhoq'	Article article
+1	quantite						> ci_dico.dhsd ci_qte
+1  emplacementOrigine 		> gtfdd.dhsd lieu	
+1  emplacementDestination  > gtfdd.dhsd lieu 
+1 	noLotSerie					> gtfdd.dhsd serie 
+1 	nature						> gtfdd.dhsd nst
+1  trouve                  B
+
+recordSql 'ci_recordsql.dhoq' ci_radioStock	ligneCourante
+
+beginp
+	trouve = 0
+	ligneCourante.Init()
+	; si noLigne = -1 ou 0 
+	if(noLigne <= 0)
+		; on recherche noLigne Max
+		ligneCourante.Where.PourNoSaisie(noSaisie)
+		ligneCourante.OrderBy.parNumLigneDesc()
+		if ligneCourante.Select() <> 0
+			trouve = 1
+		else
+			noLigne = 1
+		endif
+	endif
+	; si on a toujours pas trouvé
+	if trouve = 0
+		; on recherche avec le n° de ligne 
+		ligneCourante.Where.PourNoLigne(noSaisie, noLigne)
+		if ligneCourante.Select() <> 0
+			trouve = 1
+		else
+			noLigne = 1
+		endif
+	endif
+	; si on a toujours pas trouvé
+	if trouve = 0
+		; on recherche avec le n° de ligne 
+		ligneCourante.Where.PourNoLigne(noSaisie, noLigne)
+		if ligneCourante.Select() <> 0
+			trouve = 1
+		else
+			noLigne = 1
+		endif
+	endif
+
+	if trouve = 1
+		noLigne = ligneCourante.ci_nolig
+		IdentArticle(ligneCourante.ci_ref)
+		article = ci_art
+		quantite = ligneCourante.ci_qte
+		emplacementOrigine = ligneCourante.ci_lieu_ori
+		emplacementDestination = ligneCourante.ci_lieu_des
+		noLotSerie = ligneCourante.ci_serie
+		nature = ligneCourante.ci_nature
+	endif
+endp
+
+;* 
+;* message de confirmation d'annulation
+;* renvoie 1 s'il faut enregistrer et quitter 
+;* renvoie 2 s'il faut quitter sans enregistrer
+;* renvoie 3 s'il faut revenir a la saisie
+;* 
+public function int confirmerAnnulation()
+1 position     1,0  =  1
+1 saisie       1
+beginf
+	label debut
+	tcls | tlocate(1,1)
+	printrad("         ATTENTION !          ",1,1,1)
+	printrad("*----------------------------*",2,1,1)
+	printrad("Voulez vous enregistrer votre ",3,1,1)
+	printrad("          saisie ?            ",4,1,1)
+	if	position = 1 | trever | endif
+	printrad("     Enregistrer et Quitter   ",9,1,1)
+	if	position = 1 | teor | endif
+	if	position = 2 | trever | endif
+	printrad("   Quitter sans enregistrer   ",10,1,1)
+	if	position = 2 | teor | endif
+	if	position = 3 | trever | endif
+	printrad("          Annuler             ",11,1,1)
+	if	position = 3 | teor | endif
+	saisie = inputRad(16, 1)
+	if Harmony.Key  = K_UP
+		if position = 1
+			position = 3
+ 		else
+			position = position - 1
+		endif
+	endif
+	if Harmony.Key  = K_DOWN
+		if position = 3
+			position = 1
+		else
+			position = position + 1
+		endif
+	endif
+	if Harmony.Key = K_ESCAPE
+		 position = 3
+		 goto fini
+	endif
+	if Harmony.Key = K_RETURN
+		 goto fini
+	endif
+	goto debut
+	label fini
+	 freturn position
+endf
+
+
+;* 
+;* 	  LANCEMENT DU MENU saisie d'article
+;* 
+public function int saisieArticle(depotOrigine, depotDestination, noSaisie)
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 						; Record sur la table des dépôts	origine
+recordsql	'gtrstab.dhoq'	Depot depotDestination 					; Record sur la table des dépôts	destination
+recordsql	'gtrsArt.dhoq'	Article ci_articleCourant				; Record sur la table des articles
+1  nvSaisie          		12,D2											; n°de saisie
+1  noSaisie          		12,D2											; n°de saisie
+1  noLigne						12,D2											; n° de ligne
+1	saisie	   				> gtfdd.dhsd ref							; article
+1	saisieSAV	   			> gtfdd.dhsd ref 							; article
+1	quantite						> ci_dico.dhsd ci_qte	=1
+1	modif    					1,0							=1				; modification quantité = 1  : autre > 1
+1  emplacementOrigine 		> gtfdd.dhsd lieu	
+1  emplacementDestination  > gtfdd.dhsd lieu 
+1 	noLotSerie					> gtfdd.dhsd serie 
+1 	nature						> gtfdd.dhsd nst
+1  modifEnCours				1,0 = 0						  				;0 aucune modif en cours 1 modif en cours
+1  controleForce				2,0 = 0							  			;0 contrôle non forcé
+1  i                       1,0
+beginf
+	label menu_article
+	afficherMenuArticle(noLigne, ci_articleCourant, depotOrigine, depotDestination, quantite, emplacementOrigine, emplacementDestination, noLotSerie, nature, modif)
+	saisie=inputRad(14, 1)
+
+	if saisie = '' and Harmony.Key = 0 | goto menu_article | endif
+	if tend | freturn(0) | endif
+	if Harmony.Key = K_ESCAPE 
+		if modifEnCours = 1 or noSaisie > 0 
+			switch confirmerAnnulation()
+				case 1 
+					; on simule une validation
+					Harmony.Key = K_F4
+				case 2
+					; on annule la saisie et on quitte
+					annulerSaisieEnCours(noSaisie)
+					goto fini
+				case 3
+					goto menu_article
+			Endswitch
+		else
+			goto fini
+		endif
+	endif
+	if Harmony.Key = K_UP and modif = 1 and noSaisie <> 0 								; affichage de l'article precedent
+		if modifEnCours = 1
+			nvSaisie = CreerLigStock(noSaisie, noLigne, ci_muser.userx, ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite, controleForce)  
+			modifEnCours = 0
+		endif
+		noLigne = noLigne - 1
+		affArticle(noSaisie, noLigne, ci_articleCourant, quantite, emplacementOrigine, emplacementDestination, noLotSerie, nature)
+		goto menu_article
+	endif	 				
+	if Harmony.Key = K_DOWN  								; affichage de l'article suivant
+		if modif <> 1
+			Harmony.Key = K_RETURN	
+		else 
+			if noSaisie <> 0 
+				if modifEnCours = 1
+					nvSaisie = CreerLigStock(noSaisie, noLigne, ci_muser.userx, ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite, controleForce)  
+					modifEnCours = 0
+				endif
+				noLigne = noLigne + 1
+				affArticle(noSaisie, noLigne, ci_articleCourant, quantite, emplacementOrigine, emplacementDestination, noLotSerie, nature)
+				goto menu_article
+			endif
+		endif
+	endif	 				
+	if Harmony.Key = K_F1   								; affichage de l'aide
+		AfficherAide(depotOrigine, depotDestination, noSaisie)
+		goto menu_article
+	endif	 				
+	if Harmony.Key = K_F2									; passage en mode modif
+		if ci_articleCourant.Ref <> ''
+			modif = nextModif(0, depotOrigine, depotDestination, ci_articleCourant)
+		else
+			MessageRadio("Aucun article saisi  !!!")
+		endif
+	endif	 	
+	if Harmony.Key = K_F4  					 				; validation
+		if noSaisie <> 0 or ci_articleCourant.Ref <> ''
+ 			if ci_articleCourant.Ref <> ''
+				nvSaisie = CreerLigStock(noSaisie, noLigne, ci_muser.userx, ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite, controleForce)  
+			endif
+			if nvSaisie <> -1
+				CreerBLStock(nvSaisie)
+				goto fini
+			else
+				MessageRadio("Terminer saisie en cours !!!")
+			endif
+		else
+			MessageRadio("Aucun article saisi  !!!")
+		endif
+			goto fini
+	endif	 
+
+	; Recherche si la saisie est une référence d'article
+	saisie = fstring("U",saisie)
+	if	IdentArticle(saisie) <> 0
+		if ci_articleCourant.Ref <> ''
+			nvSaisie = CreerLigStock(noSaisie, noLigne, ci_muser.userx, ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite, controleForce)  
+			if nvSaisie <> -1
+				noSaisie = nvSaisie
+				ci_articleCourant = ci_art
+				noLigne = 0
+				modif = initInfoSaisie(ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite) 
+				if(modif <> 1)
+					for i = 1 to 5 step 1
+						tlocate(1, 1)
+						tdisplay($7)
+						sleep(100)
+					next
+				endif
+			endif
+		else
+			ci_articleCourant = ci_art
+			noLigne = 0
+			modif = initInfoSaisie(ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite) 
+			if modif = 1
+				controleForce = controleArticle(ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite)
+			endif
+		endif
+		modifEnCours = 1
+	else 
+		if modif = 1	                     ; saisie de la quantité
+			if saisie <> ''
+				if	isnum(saisie) 
+					quantite = saisie
+					if modif = 1
+						controleForce = controleArticle(ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite)
+					endif
+					modifEnCours = 1
+				else
+					tcls | tlocate(1,1)
+					MessageRadio("Erreur de saisie !!!")
+				endif	
+			endif
+		endif
+			
+		if Harmony.Key = K_return and modif > 1
+		switch modif
+			case 2								; saisie emplacement	dépot origine
+					if saisie <> ''
+						emplacementOrigine = saisie
+						modifEnCours = 1
+					endif
+					if	emplacementOrigine <> ' '
+						modif = nextModif(modif, depotOrigine, DepotDestination, ci_articleCourant)
+					else
+						MessageRadio "Emplacement Obligatoire"
+					endif
+			case 3								; saisie emplacement	dépot origine
+					if saisie <> ''
+						emplacementDestination = saisie
+						modifEnCours = 1
+					endif
+					if emplacementDestination <> ' '
+						modif = nextModif(modif, depotOrigine, DepotDestination, ci_articleCourant)
+					else
+						MessageRadio "Emplacement Obligatoire"
+					endif
+			case 4								; saisie emplacement	dépot origine
+					if saisie <> ''
+						noLotSerie = saisie
+						modifEnCours = 1
+					endif
+					if noLotSerie <> ' '
+						modif = nextModif(modif, depotOrigine, DepotDestination, ci_articleCourant)
+					else
+						MessageRadio "n° Lot/Serie Obligatoire"
+					endif
+			case 5	 							; saisie lot
+					if saisie <> ''
+					nature = saisie
+					modifEnCours = 1
+				endif
+				modif = nextModif(modif, depotOrigine, DepotDestination, ci_articleCourant)
+		EndSwitch
+			if modif = 1
+				controleForce = controleArticle(ci_articleCourant, noLotSerie, nature, depotOrigine, depotDestination, emplacementOrigine, emplacementDestination, quantite)
+			endif
+		endif
+	endif
+
+	goto menu_article
+	label fini
+	Freturn 0
+endf
+
+;* 
+;* 	  LANCEMENT DU MENU TRANSFERT
+;* 
+public procedure AfficherMenuTransfert(action)
+1 action				1,0		;1 : transfert, 2 sorite de stock
+
+;
+; Choix du dossier et du compte sur lequel travailler
+;
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 				; Record sur la table des dépôts
+recordsql	'gtrstab.dhoq'	Depot depotDestination 			; Record sur la table des dépôts
+1  saisie   20
+1	car2	  	2
+1	car		2
+2	cc1		b
+2  cc2		b
+1	ref		14
+1	qte		13,4
+1	i			x
+1	lig		3,0
+1	col		3,0
+1	valkey 	3,0
+1  noSaisie 13,0
+
+beginp
+label menu_transfert
+	depotDestination.Init()
+	depotOrigine.Init()
+
+	tcls | tlocate(1,1)
+	printrad("*----------------------------*",1,1,1)
+	if action=1
+		printrad("Transfert de STOCK",2,1,1)
+	elsif action=2
+		printrad("Sortie de STOCK",2,1,1)
+	else
+		printrad("Entree en STOCK",2,1,1)
+	endif
+	if action=1 or action=2
+		printrad("*----------------------------*",3,1,1)
+		trever
+		printrad("Depot origine :",5,1,1)
+		teor
+		printrad("*----------------------------*",14,1,1)
+		printrad("ESC:Quitter",15,1,1)
+		saisie = inputRad(5, 17)
+		if tend or Harmony.Key = K_ESCAPE   |goto fini | endif
+		if saisie = '' | goto menu_transfert | endif
+
+		if	IdentDepot(saisie) = 0
+			MessageRadio("DEPOT INCONNU")
+			goto menu_transfert
+		else
+			; on enregistre le depot d'origine
+			depotOrigine = ci_depot
+		endif
+	endif
+
+	if action = 1 or action = 3 ; on fait un transfert
+		label menu_depot_destination
+		if action = 1
+			tcls | tlocate(1,1)
+			printrad("*----------------------------*",1,1,1)
+ 			printrad("Transfert de STOCK",2,1,1)
+			printrad("*----------------------------*",3,1,1)
+			printrad("Depot origine : " & depotorigine.Depo ,5,1,1)
+			trever
+			printrad("Depot Cible :",6,1,1)
+			teor		  
+			printrad("*----------------------------*",14,1,1)
+			printrad("ESC:Quitter",15,1,1)
+			saisie = inputRad(6, 17)
+		else
+			tcls | tlocate(1,1)
+			printrad("*----------------------------*",1,1,1)
+			printrad("Entrée en STOCK",2,1,1)
+			printrad("*----------------------------*",3,1,1)
+			trever
+			printrad("Depot Cible :",5,1,1)
+			teor		  
+			printrad("*----------------------------*",14,1,1)
+			printrad("ESC:Quitter",15,1,1)
+			saisie = inputRad(5, 17)
+		endif
+		if tend or Harmony.Key = K_ESCAPE | goto fini | endif
+		if saisie = '' | goto menu_depot_destination | endif
+		ci_depot.Init()
+		ci_depot.Where.exists(saisie)	  
+		if ci_depot.Select() = 0
+			MessageRadio("DEPOT INCONNU")
+			goto menu_depot_destination
+		else
+			depotDestination = ci_depot
+			if depotOrigine.Depo = depotDestination.Depo
+				MessageRadio("Depot Dest = Depot Origine")
+				goto menu_depot_destination
+			endif
+		endif
+	endif
+	label fini
+	saisieArticle(depotorigine, depotdestination, noSaisie)
+endp
+
+;* 
+;* 	  LANCEMENT DU 2ème ECRAN : CHOIX DU MENU
+;* 
+public procedure AfficherMenuRadio
+;
+; Choix du dossier et du compte sur lequel travailler
+;
+1	depotorigine		> gtfdd.dhsd depo							; dépôt origine
+1	depotdestination	> gtfdd.dhsd depo							; dépôt destination
+1	car2	2
+1	car	2
+2	cc1	b
+2  cc2	b
+1	ref	14
+1	qte	13,4
+1	i		x
+1	lig	3,0
+1	col	3,0
+1	valkey 3,0
+
+beginp
+label debut
+	if tend | goto fini |	endif
+
+	;
+	; Ecran de bienvenue	et de choix du MENU
+	;
+	tcls | tlocate(1,1)
+	printrad("*-----------------------------*",1,1,1)
+	printrad(" " & ci_muser.Nom,2,1,1)
+	printrad("*-----------------------------*",3,1,1)
+	printrad("1 - transfert stock",4,1,1)
+	printrad("2 - sortie simple",5,1,1)
+	printrad("3 - entree simple",6,1,1)
+	printrad("*-----------------------------*",12,1,1)
+	printrad("Choix :",13,1)
+	printrad("*-----------------------------*",14,1,1)
+	printrad("F1:Aide - ESC:Quitter",15,1,1)
+	car = inputRad(13, 8)
+	if tend | goto fini |	endif
+	if Harmony.Key = K_ESCAPE | goto fini | endif
+	
+	;
+	; MENU = 1 : TRANSFERT DE STOCK
+	;
+	if car in ("1", "2", "3")
+		AfficherMenuTransfert(car)
+		goto fini
+	endif
+	goto debut 
+label fini
+	finRadio()
+endp
+
+;* 
+;* 	  LANCEMENT DU 2ème ECRAN : CHOIX REPRISE SAISIE
+;* 
+public procedure AfficherMenuReprise(noSaisie)
+recordsql	'gtrstab.dhoq'	Depot depotOrigine 				; Record sur la table des dépôts
+recordsql	'gtrstab.dhoq'	Depot depotDestination 			; Record sur la table des dépôts
+1 noSaisie    8,0
+1	car	2
+1	valkey 3,0
+
+;
+; Rappel des infos de la saisie précedente
+;
+
+beginP
+	ci_radioStock.Init()
+	ci_radioStock.Where.PourNoSaisie(noSaisie)
+	if ci_radioStock.Select() <> 0
+		label debut
+		tcls | tlocate(1,1)
+		printrad("*-----------------------------*",1,1,1)
+		printrad("Bonjour " & ci_muser.Nom && ".",2,1,1)
+		printrad("Saisie en cours du " & formatd('J0/M0/AAAA', ci_radioStock.ci_dats),3,1,1)
+		printrad("à " & format('<99:99:99>', ci_radioStock.ci_hres),4,1,1)
+		if ci_radioStock.ci_depo <> '' and ci_radioStock.ci_blasdepo <> ''
+			printrad("transfert de " & ci_radioStock.ci_blasdepo && " vers " & ci_radioStock.ci_depo ,5,1,1)
+		elsif ci_radioStock.ci_depo = ''
+			printrad("* - sortie de " & ci_radioStock.ci_blasdepo ,5,1,1)
+		else
+			printrad("* - entree de " & ci_radioStock.ci_depo ,5,1,1)
+		endif
+		printrad("*-----------------------------*",6,1,1)
+		printrad("1- reprendre la saisie",7,1,1)
+		printrad("2- recommencer depuis le debut",8,1,1)
+		printrad("*----------------------------*",12,1,1)
+		printrad("Choix :",13,1)
+		printrad("*----------------------------*",14,1,1)
+		printrad("F1:Aide - ESC:Quitter",15,1,1)
+		car = inputRad(10, 8)
+		if tend | goto fini |	endif
+		if Harmony.Key = K_ESCAPE | goto fini | endif
+	
+		;
+		; MENU = 1 : reprise du programme en saisie d'article
+		;
+		if car = "1"
+			if(ci_radioStock.ci_blasdepo <> ' ')
+				IdentDepot(ci_radioStock.ci_blasdepo)
+				depotOrigine = ci_depot
+			else
+				 depotOrigine.Init()
+			endif
+
+			
+			if(ci_radioStock.ci_depo <> ' ')
+				IdentDepot(ci_radioStock.ci_depo)
+				depotDestination = ci_depot
+			else
+				depotDestination.Init()
+			endif
+			saisieArticle(depotOrigine, depotDestination, noSaisie)
+			goto fini
+		endif
+		
+		;
+		; MENU = 2 : SORTIE SIMPLE DE STOCK
+		;
+		if car = "2"
+			annulerSaisieEnCours(noSaisie)
+			afficherMenuRadio()
+			goto fini
+		endif		
+	endif
+
+	goto debut
+
+	label fini
+endp
+
+;* 
+;* 	  APPEL DE LA FONCTION TELNET PAR LE MAIN
+;* 
+function ptr telnet(ident)
+
+1	ident		A
+1  numSaisie  8,0
+
+;
+;ouverture et chargement pour telnet, obligatoire en debut de programme
+;
+beginf
+
+	topen
+	if tend | goto fini |	endif
+	tmaxcar(31)		
+
+	if identRadio
+		numSaisie = saisieEnCours(ci_muser.user)
+		if numsaisie = 0
+			AfficherMenuRadio
+		else
+			AfficherMenuReprise(numsaisie)
+		endif
+	endif
+	
+	label fini
+	FinRadio()
+
+	freturn 1
+endf
+
+;* 
+;* 	  LANCEMENT DU PROGRAMME
+;* 
+
+main 
+	treturnwithCRLF
+	telnet(" ")
+	programexit

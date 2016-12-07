@@ -1,0 +1,128 @@
+   OverWrite ggtt220.dhop
+
+
+Include		"GTTC000.dhsp"																					
+Include		"GGTC000.dhsp"																					
+
+Module		"GTTMPCE.dhop"																					; Module des pièces
+Module		"GTPMPCE.dhop"																					; Module des pièces
+Module		"GTPMSTOC.dhop"																					; Module des stocks
+Module		"GGTMSTR000.dhop"
+Module      "GGPMBAS.DHOP"
+
+Module		"GGPP100.dhop"
+Module		"GGPMFIC.dhop"
+Module		"GGTM000.dhop"
+
+Public		HFile		GTFDD.dhsd		GTFTAB		GTFTAB											; Fichier des tables
+Public		HFile		GTFDD.dhsd		GTFAT			GTFTAT											; Fichier des articles
+Public		HFile		GTFDD.dhsd		GTFOF			GTFOF												; Fichier des ofs
+Public		HFile		GTFDD.dhsd		GTFNOM		GTFNOM											; Fichier des nomenclature
+
+Public		Record	GTFDD.dhsd		SOC			
+Public		Record	GTFDD.dhsd		SOCGP
+
+Public		Record	GTFDD.dhsd		MOUV																; Mouvements
+Public		Record	GTFDD.dhsd		BF																	; Entête d'of
+Public		Record	GGFDD.dhsd		BC																	; Lignes de nomenclature
+Public		Record	GTFDD.dhsd		BG																	; Ligne composant d'of
+Public		Record	GTFDD.dhsd		BB																	; Lignes de nomenclature
+Public		Record	GTFDD.dhsd		ART																; ARticles
+;Public		Record	GTFDD.dhsd		RSO																; Réappros
+Public		Record	GGFDD.dhsd		BH																	; Séquence
+record  		"ggfdd.dhsd"	BP								; Temps Machine
+
+Public		Record	GTFDD.dhsd		GTPCE																; Enreg de travail pièces
+Public		Record	GTFDD.dhsd		G1T1																; Enreg de travail
+Public		Record	GTFDD.dhsd		G1T2																; Enreg de travail
+Public		Record	GTFDD.dhsd		G6T4		TMPG6T4												; Enreg de travail
+Public		Record	GTFDD.dhsd		G6T6		TMPG6T6												; Enreg de travail
+Public		Record	GTFDD.dhsd		ENT																; En-tête
+Public		Record	GTFDD.dhsd		T017																; Table des dépôts
+Public 		record	GTFDD.dhsd 		T017 T017_Dst													; utilisé dans gtpmstoc pour transfert de dépôt (pas besoin)
+Public 		record	GTFDD.dhsd 		T017 T017_Ori													; utilisé dans gtpmstoc pour transfert de dépôt (pas besoin)
+Public		Record	GTFDD.dhsd		T018																; Table des emplacements
+Public		Record	GTFDD.dhsd		G6																	; Enregistrement de travail
+Public		Record	GTFDD.dhsd		XQ				G3XQ												; Enregistrement sélections
+Public		Record	GTFDD.dhsd		XZ				G3XZ												; Enregistrement sélections
+Public		Record	ddsys.dhsd		ROWINFO		G1T1ROW											; Enregistrement de contrôle du tableau ressources
+Public		Record	ddsys.dhsd		ROWINFO		ROW_AFF											; Enregistrement de contrôle du tableau ressources
+Public		Record	ddsys.dhsd		ROWINFO		ROW_NAF											; Enregistrement de contrôle du tableau ressources
+Public		Record	GTFDD.dhsd		XT				G3XT												; Enregistrement identifiants tableaux
+Public		Record	GTFDD.dhsd		GTENT																; Enreg de travail ENT
+Public		Record	GGFDD.dhsd		GG220			GG220												;Enreg pilotage XML
+Public 		Record 	ggfdd.dhsd 		GG220BR		GG220BR_1										;Ligne mouv en saisie par BR pour composé
+Public 		Record 	ggfdd.dhsd 		GG220BR		GG220BR_2										;Ligne mouv en saisie par BR pour composants
+
+Public		Record	GGFDD.dhsd		GG220		GG220XML_SURCHARGE							;enreg temporaire pour communication pendant la lecture de l'xml	
+Public		Record	GGFDD.dhsd		BRCOMP	GG220BRXML_SURCHARGE							;enreg temporaire pour communication pendant la lecture de l'xml		
+
+Public		Record	a5dd.dhsd			MZ																	; Zone échange
+
+Define		IdTableauVtl						=	G3XT.IDTABLEAU (2)
+
+Const			C_Tunnel_Pilotage_XML			= 3							; import fin cycle xml
+Const			C_Tunnel_Valide_Of				= 2							; validation avec saisie
+Const			C_Tunnel_Valide_Tout				= 4							; valide	tout sans saisie
+Define		PILOTAGE_XML = (G3XQ.Tunnel = C_Tunnel_Pilotage_XML)	; pour simplifier lecture
+Define		MODE_PAR_BR		= ( G3XQ.Tunnel in (6, 7) )
+
+
+
+
+
+;* 
+;* 	  CIAG BTN le 01/09/2016 : DDM 84 : CREER LES LIGNES BP A 0 POUR LES SEQUENCES SANS AUCUNE SAISIE DE TEMPS
+;* 
+Procedure Creer_BP_0
+
+1 retour         8,0
+1 resultatHMP	  S	
+1 Param			  S
+1 Resultat		  S
+1 St 				  5,0
+1 PINO			  S
+
+ 
+hfile 	"ggfdd.dhsd"	   GGFTPS 	GGFTPS 			; fichier pivot pour intégration des temps
+
+beginP
+	BP = " "
+	
+	; ecriture enreg BP
+	BP.Ce1     = 'P'
+	BP.Dos     = BH.Dos
+	BP.Etb     = BH.Etb
+	BP.Tpstyp  = 2 		; 1:temps de préparation/2:temps de fabrication
+	BP.Pino    = BH.Pino
+	BP.GamSeq  = BH.GamSeq
+	BP.DEBDH   = Time(7)
+	BP.FinDh   = BP.DEBDH 
+	BP.Origine = '1'
+
+
+	iwrite(GGFTPS, BP)
+
+	hclose(GGFTPS)
+	Tunnel_OF_Importer_Temps(GGFTPS.name, )
+ 
+	hopen(GGFTPS, "R")
+endp
+
+
+;*
+Function Char BH_Cloturer_Av
+; Si la séquence n'est pas clôturée, le programme demande confirmation
+; avant de le faire
+BeginF
+
+;	c'est bien ici qu'il faut se positionner : Boucle sur les lignes BH 
+	
+	If BH.ReelTps(1) = 0
+		Creer_BP_0 
+	Endif
+
+	Freturn('O')
+
+EndF
+

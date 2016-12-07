@@ -1,0 +1,3755 @@
+;>xwin4obj     imprimante               6.0       20160907114655      
+[masque]
+ libelle="balance"
+ utilisateur="CIAG"
+ date_modification="07/09/2016"
+ feuille_style="fstyleimp.dhfi"
+ id_traitements=13
+ taille_ligne=9
+ taille_page=calcule
+ taille_colonne=4
+ nombre_colonnes=78
+ nombre_lignes=70
+ etat=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ dernier_id=1000000
+ surcharge=oui
+ date_modif_base="20130701160420"
+ dernier_id_page=100000
+ niveau_surcharge=1
+ [adresses]
+  type_ad1=rien
+  type_ad2=rien
+  type_ad3=rien
+[defaut]
+[enregistrements]
+ "ccfdd.dhsd",ccfjca,c3,c3,1200,0
+ "a5dd.dhsd",,mz,mz,1000,0
+ "ccfdd.dhsd",,x4,x4,1800,0
+ "ddsys.dhsd",,system,system,4160,0
+ "ccfdd.dhsd",ccfjq,xq,c3xq,4400,0
+ "ccfdd.dhsd",,x5,x5,8200,0
+ "ccfdd.dhsd",ccfdos,ca,ca,1700,0
+ "gtfdd.dhsd",,xp,xp,100,0
+[bloc]
+ numero=1
+ libelle="En-tête première page"
+ taille=14
+ type_bloc=fond
+ debut=1
+ fin=70
+ chainage=22
+ bloc_fond=3
+ position_fond=15
+ ident_unique=1
+ [cadre]
+  [presentation]
+   position=99,1
+   taille=25,311
+   id=1
+  [param_cadre]
+   nature=plein
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+ [obj_texte]
+  [presentation]
+   position=85,189
+   taille=9,21
+   id=460
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="Devise"
+ [cadre]
+  [presentation]
+   position=99,225
+   taille=512,1
+   id=452
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=99,138
+   taille=512,1
+   id=451
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=99,92
+   taille=512,1
+   id=450
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=612,0
+   taille=18,313
+   id=2
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=609,1
+   taille=1,311
+   id=6
+  [param_cadre]
+   nature=horizontal_b
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=111,310
+   taille=499,1
+   id=7
+  [param_cadre]
+   nature=vertical_d
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=111,1
+   taille=499,1
+   id=8
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=6,1
+   taille=38,312
+   id=9
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=77,189
+   taille=8,29
+   noms="etbc3"
+   id=453
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="Etablissements"
+ [obj_texte]
+  [presentation]
+   position=101,140
+   taille=10,84
+   cadrage=centre
+   id=441
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Mouvement"
+ [obj_texte]
+  [presentation]
+   position=101,227
+   taille=10,83
+   cadrage=centre
+   id=442
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Solde"
+ [obj_texte]
+  [presentation]
+   position=110,2
+   taille=10,29
+   id=443
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Compte"
+ [obj_texte]
+  [presentation]
+   position=110,30
+   taille=10,61
+   cadrage=centre
+   id=444
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Intitulé"
+ [obj_texte]
+  [presentation]
+   position=110,94
+   taille=10,43
+   cadrage=centre
+   id=445
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Report"
+ [obj_texte]
+  [presentation]
+   position=111,140
+   taille=10,41
+   cadrage=centre
+   id=446
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=111,183
+   taille=10,41
+   cadrage=centre
+   id=447
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [obj_texte]
+  [presentation]
+   position=111,227
+   taille=10,42
+   cadrage=centre
+   id=448
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=111,269
+   taille=10,41
+   cadrage=centre
+   id=449
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [obj_texte]
+  [presentation]
+   position=616,2
+   taille=10,72
+   id=10
+   wstyle="STD"
+  [texte]
+   texte="Divalto Comptabilité version"
+ [obj_texte]
+  [presentation]
+   position=9,4
+   taille=10,17
+   id=11
+   wstyle="STD"
+  [texte]
+   texte="Etat"
+ [obj_texte]
+  [presentation]
+   position=10,277
+   taille=10,14
+   id=12
+   wstyle="STD"
+  [texte]
+   texte="Page"
+ [obj_texte]
+  [presentation]
+   position=30,4
+   taille=10,21
+   id=13
+   wstyle="STD"
+  [texte]
+   texte="Dossier"
+ [obj_texte]
+  [presentation]
+   position=31,247
+   taille=10,9
+   id=14
+   wstyle="STD"
+  [texte]
+   texte="le"
+ [obj_texte]
+  [presentation]
+   position=48,2
+   taille=10,22
+   id=15
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="Balance"
+ [obj_texte]
+  [presentation]
+   position=48,95
+   taille=9,13
+   id=16
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="du"
+ [obj_texte]
+  [presentation]
+   position=48,141
+   taille=10,9
+   id=17
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="au"
+ [obj_texte]
+  [presentation]
+   position=57,109
+   taille=9,41
+   id=18
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="Début exercice"
+ [obj_texte]
+  [presentation]
+   position=48,189
+   taille=8,18
+   id=19
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="Compte"
+ [obj_texte]
+  [presentation]
+   position=48,207
+   taille=8,11
+   cadrage=centre
+   id=20
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="de"
+ [obj_texte]
+  [presentation]
+   position=48,238
+   taille=8,9
+   cadrage=centre
+   id=21
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="à"
+ [obj_texte]
+  [presentation]
+   position=48,271
+   taille=8,17
+   id=22
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="masque"
+ [obj_texte]
+  [presentation]
+   position=55,207
+   taille=8,11
+   cadrage=centre
+   id=23
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="de"
+ [obj_texte]
+  [presentation]
+   position=55,238
+   taille=8,9
+   cadrage=centre
+   id=24
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="à"
+ [obj_texte]
+  [presentation]
+   position=55,271
+   taille=8,17
+   id=25
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="masque"
+ [obj_texte]
+  [presentation]
+   position=66,2
+   taille=10,24
+   id=26
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="Ecritures"
+ [obj_texte]
+  [presentation]
+   position=62,207
+   taille=8,11
+   cadrage=centre
+   id=27
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="de"
+ [obj_texte]
+  [presentation]
+   position=62,238
+   taille=8,9
+   cadrage=centre
+   id=28
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="à"
+ [obj_texte]
+  [presentation]
+   position=62,271
+   taille=8,17
+   id=29
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="masque"
+ [obj_texte]
+  [presentation]
+   position=69,207
+   taille=8,11
+   cadrage=centre
+   id=30
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="de"
+ [obj_texte]
+  [presentation]
+   position=69,189
+   taille=8,18
+   id=31
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="Collectif"
+ [obj_texte]
+  [presentation]
+   position=69,238
+   taille=8,9
+   cadrage=centre
+   id=32
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="à"
+ [obj_texte]
+  [presentation]
+   position=69,271
+   taille=8,17
+   id=33
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="masque"
+ [champ]
+  [presentation]
+   position=9,22
+   taille=10,109
+   id=43
+   wstyle="STD"
+  [description]
+   donnee=mz,micle,mz
+   format="l"
+ [champ]
+  [presentation]
+   position=10,291
+   taille=10,18
+   id=44
+   wstyle="STD"
+  [description]
+   donnee=system,zpage,system
+ [champ]
+  [presentation]
+   position=20,240
+   taille=10,69
+   cadrage=droite
+   id=45
+   wstyle="STD"
+  [description]
+   donnee=system,user,system
+   format="1"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=30,24
+   taille=10,12
+   id=46
+   wstyle="STD"
+  [description]
+   donnee=xq,dos,c3xq
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=16,0
+   taille=16,313
+   cadrage=centre
+   id=47
+   wstyle="TRES_TRES_TRES_GRAND_GRAS"
+  [description]
+   donnee=xq,titre,c3xq
+ [champ]
+  [presentation]
+   position=31,252
+   taille=10,57
+   cadrage=droite
+   id=48
+   wstyle="STD"
+  [description]
+   donnee=xq,logdh,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa+hh:mm:ss
+ [multi_choix]
+  [presentation]
+   position=48,24
+   taille=10,34
+   id=49
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,8
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CHOIX_TYP_BAL"
+ [multi_choix]
+  [presentation]
+   position=48,59
+   taille=10,37
+   id=50
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,2
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   choix="ccfdmc.dhfi","CHOIX_9"
+ [champ]
+  [presentation]
+   position=48,109
+   taille=9,31
+   id=51
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,perddt,c3xq
+ [champ]
+  [presentation]
+   position=48,151
+   taille=10,31
+   id=52
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,perfdt,c3xq
+ [champ]
+  [presentation]
+   position=57,151
+   taille=10,31
+   id=53
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,exoddt,c3xq
+ [champ]
+  [presentation]
+   position=48,219
+   taille=8,22
+   id=54
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab1,c3xq,1
+ [champ]
+  [presentation]
+   position=48,248
+   taille=8,22
+   id=55
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab2,c3xq,1
+ [champ]
+  [presentation]
+   position=48,288
+   taille=8,22
+   id=56
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,msktab,c3xq,1
+ [champ]
+  [presentation]
+   position=55,219
+   taille=8,22
+   id=57
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab1,c3xq,2
+ [champ]
+  [presentation]
+   position=55,248
+   taille=8,22
+   id=58
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab2,c3xq,2
+ [champ]
+  [presentation]
+   position=55,288
+   taille=8,22
+   id=59
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,msktab,c3xq,2
+ [champ]
+  [presentation]
+   position=62,219
+   taille=8,22
+   id=60
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab1,c3xq,3
+ [champ]
+  [presentation]
+   position=62,248
+   taille=8,22
+   id=61
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab2,c3xq,3
+ [champ]
+  [presentation]
+   position=62,288
+   taille=8,22
+   id=62
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,msktab,c3xq,3
+ [multi_choix]
+  [presentation]
+   position=77,221
+   taille=8,8
+   noms="etbc3"
+   id=457
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=x4,fletbconf,x4
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   choix="ccfdmc.dhfi","AFFETB"
+ [multi_choix]
+  [presentation]
+   position=75,109
+   taille=10,26
+   id=63
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xp,chodev,xp
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CHODEV"
+ [champ]
+  [presentation]
+   position=69,219
+   taille=8,22
+   id=64
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab1,c3xq,4
+ [champ]
+  [presentation]
+   position=69,248
+   taille=8,22
+   id=65
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,cpttab2,c3xq,4
+ [champ]
+  [presentation]
+   position=69,288
+   taille=8,22
+   id=66
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,msktab,c3xq,4
+ [multi_choix]
+  [presentation]
+   position=57,2
+   taille=10,44
+   id=67
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,1
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CHOIX"
+ [multi_choix]
+  [presentation]
+   position=66,27
+   taille=10,86
+   id=68
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,3
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","AFFCE2_2"
+ [multi_choix]
+  [presentation]
+   position=75,2
+   taille=10,96
+   id=69
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,4
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CHOIX_10"
+ [champ]
+  [presentation]
+   position=30,38
+   taille=10,109
+   id=70
+   wstyle="STD"
+  [description]
+   donnee=ca,nom,ca
+ [champ]
+  [presentation]
+   position=77,224
+   taille=9,81
+   noms="etbc3"
+   id=455
+   colonnes_saisie=100
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,filtreetb,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=85,210
+   taille=9,14
+   id=461
+   colonnes_saisie=4
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=xq,dev1,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=616,74
+   taille=10,16
+   id=71
+   wstyle="STD"
+  [description]
+   donnee=xq,version,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=2
+ taille=10
+ type_bloc=fond
+ debut=1
+ fin=70
+ bloc_fond=3
+ position_fond=10
+ ident_unique=2
+ [cadre]
+  [presentation]
+   position=56,1
+   taille=25,311
+   id=421
+  [param_cadre]
+   nature=plein
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+ [obj_texte]
+  [presentation]
+   position=58,140
+   taille=10,84
+   cadrage=centre
+   id=428
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Mouvement"
+ [obj_texte]
+  [presentation]
+   position=58,227
+   taille=10,83
+   cadrage=centre
+   id=429
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Solde"
+ [obj_texte]
+  [presentation]
+   position=67,2
+   taille=10,29
+   id=430
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Compte"
+ [obj_texte]
+  [presentation]
+   position=67,30
+   taille=10,61
+   cadrage=centre
+   id=431
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Intitulé"
+ [obj_texte]
+  [presentation]
+   position=67,94
+   taille=10,43
+   cadrage=centre
+   id=432
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Report"
+ [obj_texte]
+  [presentation]
+   position=68,140
+   taille=10,41
+   cadrage=centre
+   id=433
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=68,183
+   taille=10,41
+   cadrage=centre
+   id=434
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [obj_texte]
+  [presentation]
+   position=68,227
+   taille=10,41
+   cadrage=centre
+   id=435
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=68,269
+   taille=10,41
+   cadrage=centre
+   id=436
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [cadre]
+  [presentation]
+   position=79,1
+   taille=532,1
+   id=427
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=79,310
+   taille=532,1
+   id=426
+  [param_cadre]
+   nature=vertical_d
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=610,1
+   taille=1,311
+   id=425
+  [param_cadre]
+   nature=horizontal_b
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=56,92
+   taille=555,1
+   id=424
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=56,138
+   taille=555,1
+   id=423
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=56,225
+   taille=555,1
+   id=422
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=616,2
+   taille=10,72
+   id=415
+   wstyle="STD"
+  [texte]
+   texte="Divalto Comptabilité version"
+ [cadre]
+  [presentation]
+   position=612,0
+   taille=18,313
+   id=413
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=9,4
+   taille=10,17
+   id=381
+   wstyle="STD"
+  [texte]
+   texte="Etat"
+ [obj_texte]
+  [presentation]
+   position=10,277
+   taille=10,14
+   id=382
+   wstyle="STD"
+  [texte]
+   texte="Page"
+ [obj_texte]
+  [presentation]
+   position=30,4
+   taille=10,21
+   id=383
+   wstyle="STD"
+  [texte]
+   texte="Dossier"
+ [obj_texte]
+  [presentation]
+   position=31,247
+   taille=10,9
+   id=384
+   wstyle="STD"
+  [texte]
+   texte="le"
+ [obj_texte]
+  [presentation]
+   position=45,4
+   taille=10,23
+   id=404
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="Balance"
+ [obj_texte]
+  [presentation]
+   position=45,103
+   taille=10,10
+   id=405
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="du"
+ [obj_texte]
+  [presentation]
+   position=45,149
+   taille=10,11
+   id=406
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="au"
+ [obj_texte]
+  [presentation]
+   position=45,202
+   taille=10,40
+   id=407
+   wstyle="STD_ITALIQUE"
+  [texte]
+   texte="Début exercice"
+ [cadre]
+  [presentation]
+   position=6,1
+   taille=38,312
+   id=380
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [champ]
+  [presentation]
+   position=9,22
+   taille=10,109
+   id=385
+   wstyle="STD"
+  [description]
+   donnee=mz,micle,mz
+   format="l"
+ [champ]
+  [presentation]
+   position=10,291
+   taille=10,18
+   id=386
+   wstyle="STD"
+  [description]
+   donnee=system,zpage,system
+ [champ]
+  [presentation]
+   position=20,240
+   taille=10,69
+   cadrage=droite
+   id=387
+   wstyle="STD"
+  [description]
+   donnee=system,user,system
+   format="1"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=30,24
+   taille=10,12
+   id=388
+   wstyle="STD"
+  [description]
+   donnee=xq,dos,c3xq
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=16,0
+   taille=16,313
+   cadrage=centre
+   id=389
+   wstyle="TRES_TRES_TRES_GRAND_GRAS"
+  [description]
+   donnee=xq,titre,c3xq
+ [champ]
+  [presentation]
+   position=31,252
+   taille=10,57
+   cadrage=droite
+   id=390
+   wstyle="STD"
+  [description]
+   donnee=xq,logdh,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa+hh:mm:ss
+ [champ]
+  [presentation]
+   position=30,38
+   taille=10,109
+   id=391
+   wstyle="STD"
+  [description]
+   donnee=ca,nom,ca
+ [multi_choix]
+  [presentation]
+   position=45,28
+   taille=10,34
+   id=408
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,8
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CHOIX_TYP_BAL"
+ [multi_choix]
+  [presentation]
+   position=45,64
+   taille=10,37
+   id=409
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,choix,c3xq,2
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   choix="ccfdmc.dhfi","CHOIX_9"
+ [champ]
+  [presentation]
+   position=45,114
+   taille=10,35
+   id=410
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,perddt,c3xq
+ [champ]
+  [presentation]
+   position=45,161
+   taille=10,33
+   id=411
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,perfdt,c3xq
+ [champ]
+  [presentation]
+   position=45,243
+   taille=10,35
+   id=412
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=xq,exoddt,c3xq
+ [champ]
+  [presentation]
+   position=616,74
+   taille=10,16
+   id=416
+   wstyle="STD"
+  [description]
+   donnee=xq,version,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=3
+ libelle="Edition compte"
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=11
+ position_fond=2
+ diva_avant="Bloc_EditionCompte_1_Av"
+ diva_apres="Bloc_EditionCompte_1_Ap"
+ ident_unique=3
+ [multi_choix]
+  [presentation]
+   position=1,22
+   taille=8,8
+   noms="etbc3"
+   id=459
+   wstyle="PETIT"
+  [description]
+   donnee=x4,fletbconf,x4
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   choix="ccfdmc.dhfi","AFFETB"
+ [champ]
+  [presentation]
+   position=1,3
+   taille=8,23
+   id=112
+   wstyle="PETIT"
+  [description]
+   donnee=c3,cpt,c3
+ [champ]
+  [presentation]
+   position=1,26
+   taille=8,66
+   id=113
+   wstyle="PETIT"
+  [description]
+   donnee=c3,lib,c3
+ [champ]
+  [presentation]
+   position=1,228
+   taille=8,40
+   id=114
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtslddb,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,271
+   taille=8,40
+   id=115
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtsldcr,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,88
+   taille=8,40
+   id=116
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtrep,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,142
+   taille=8,40
+   id=117
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtdb,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,185
+   taille=8,40
+   id=118
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtcr,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=1,127
+   taille=8,11
+   id=119
+   wstyle="PETIT"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+[bloc]
+ numero=4
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=3
+ position_fond=2
+ ident_unique=4
+ [obj_texte]
+  [presentation]
+   position=1,26
+   taille=8,287
+   id=120
+   wstyle="PETIT"
+  [texte]
+   texte="Compte confidentiel"
+ [champ]
+  [presentation]
+   position=1,3
+   taille=8,23
+   id=121
+   wstyle="PETIT"
+  [description]
+   donnee=c3,cpt,c3
+[bloc]
+ numero=5
+ libelle="Edition compte"
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=3
+ position_fond=2
+ diva_avant="Bloc_EditionCompte_2_Av"
+ ident_unique=5
+ [cadre]
+  [presentation]
+   position=0,75
+   taille=10,237
+   id=122
+  [param_cadre]
+   nature=plein
+   wnom_couleurcadre="TRAIT_SIMPLE"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+ [cadre]
+  [presentation]
+   position=0,225
+   taille=10,1
+   id=123
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=0,138
+   taille=10,1
+   id=124
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=0,92
+   taille=10,1
+   id=125
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [champ]
+  [presentation]
+   position=1,78
+   taille=8,14
+   id=126
+   wstyle="PETIT_GRAS_ITALIQUE"
+  [description]
+   donnee=x4,dev,x4
+ [champ]
+  [presentation]
+   position=1,88
+   taille=8,40
+   id=127
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtdevrep,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,142
+   taille=8,40
+   id=128
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtdevdb,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,185
+   taille=8,40
+   id=129
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtdevcr,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=1,127
+   taille=8,11
+   id=130
+   wstyle="PETIT"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [champ]
+  [presentation]
+   position=1,228
+   taille=8,40
+   id=131
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtslddb,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,271
+   taille=8,40
+   id=132
+   wstyle="PETIT"
+  [description]
+   donnee=x4,mtsldcr,x4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+[bloc]
+ numero=6
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=6
+[bloc]
+ numero=7
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=7
+[bloc]
+ numero=8
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=8
+[bloc]
+ numero=9
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=9
+[bloc]
+ numero=10
+ saut_fin=oui
+ taille=0
+ type_bloc=mobile
+ debut=10
+ fin=65533
+ chainage=2
+ ident_unique=10
+[bloc]
+ numero=11
+ libelle="Total groupe"
+ taille=2
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=3
+ position_fond=3
+ diva_avant="Bloc_TotalGroupe_1_Av"
+ diva_apres="Bloc_TotalGroupe_1_Ap"
+ ident_unique=11
+ [obj_texte]
+  [presentation]
+   position=2,32
+   taille=8,51
+   id=133
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Total groupe"
+ [champ]
+  [presentation]
+   position=2,8
+   taille=8,25
+   id=134
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,rupture,x4
+ [champ]
+  [presentation]
+   position=2,84
+   taille=8,44
+   id=135
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtrep,x4,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,138
+   taille=8,44
+   id=136
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtdb,x4,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,181
+   taille=8,44
+   id=137
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtcr,x4,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,224
+   taille=8,44
+   id=138
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtslddb,x4,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,267
+   taille=8,44
+   id=139
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtsldcr,x4,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=2,127
+   taille=8,11
+   id=140
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+[bloc]
+ numero=12
+ libelle="Total classe"
+ taille=2
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=11
+ position_fond=4
+ diva_avant="Bloc_TotalClasse_1_Av"
+ diva_apres="Bloc_TotalClasse_1_Ap"
+ ident_unique=12
+ [cadre]
+  [presentation]
+   position=13,2
+   taille=1,310
+   id=141
+  [param_cadre]
+   nature=horizontal_b
+   type=relief_relache
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=2,32
+   taille=8,51
+   id=142
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Total classe"
+ [champ]
+  [presentation]
+   position=2,84
+   taille=8,44
+   id=143
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtrep,x4,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,138
+   taille=8,44
+   id=144
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtdb,x4,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,181
+   taille=8,44
+   id=145
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtcr,x4,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,224
+   taille=8,44
+   id=146
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtslddb,x4,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=2,267
+   taille=8,44
+   id=147
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtsldcr,x4,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,4
+   taille=10,6
+   id=148
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x4,cpt,x4
+   format="D(2,8)"
+ [multi_choix]
+  [presentation]
+   position=2,127
+   taille=8,11
+   id=149
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+[bloc]
+ numero=13
+ libelle="Total comptes bilan"
+ taille=2
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ bloc_fond=11
+ position_fond=2
+ diva_avant="Bloc_TotalComptesBilan_1_Av"
+ diva_apres="Bloc_TotalComptesBilan_1_Ap"
+ ident_unique=13
+ [cadre]
+  [presentation]
+   position=12,2
+   taille=1,310
+   id=150
+  [param_cadre]
+   nature=horizontal_b
+   type=cadre_relache
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=1,3
+   taille=8,32
+   id=151
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Total Comptes"
+ [champ]
+  [presentation]
+   position=1,84
+   taille=8,44
+   id=152
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtrep,x4,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,138
+   taille=8,44
+   id=153
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtdb,x4,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,181
+   taille=8,44
+   id=154
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtcr,x4,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,224
+   taille=8,44
+   id=155
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtslddb,x4,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,267
+   taille=8,44
+   id=156
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtsldcr,x4,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=1,34
+   taille=8,52
+   id=157
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,cptnat,x4
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","CPTNAT"
+ [multi_choix]
+  [presentation]
+   position=1,127
+   taille=8,11
+   id=158
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+[bloc]
+ numero=14
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=14
+[bloc]
+ numero=15
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=15
+[bloc]
+ numero=16
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=16
+[bloc]
+ numero=17
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=17
+[bloc]
+ numero=18
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=18
+[bloc]
+ numero=19
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=19
+[bloc]
+ numero=20
+ libelle="Total general"
+ taille=3
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ chainage=21
+ bloc_fond=11
+ position_fond=3
+ diva_avant="Bloc_TotalGeneral_1_Av"
+ diva_apres="Bloc_TotalGeneral_1_Ap"
+ ident_unique=20
+ [obj_texte]
+  [presentation]
+   position=9,31
+   taille=10,52
+   id=159
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Total général"
+ [champ]
+  [presentation]
+   position=9,84
+   taille=8,44
+   id=160
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtrep,x4,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=9,138
+   taille=8,44
+   id=161
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtdb,x4,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=9,181
+   taille=8,44
+   id=162
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtcr,x4,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=9,224
+   taille=8,44
+   id=163
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtslddb,x4,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=9,267
+   taille=8,44
+   id=164
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=x4,balmtsldcr,x4,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=9,127
+   taille=8,11
+   id=165
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=xq,choix,c3xq,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+[bloc]
+ numero=21
+ libelle="RECAPITULATIF DE GRANLIVR"
+ saut_debut=oui
+ saut_fin=oui
+ taille=46
+ type_bloc=fond
+ debut=1
+ fin=70
+ diva_avant="Bloc_RecapitulatifDeGranlivr_1_Av"
+ diva_apres="Bloc_RecapitulatifDeGranlivr_1_Ap"
+ ident_unique=21
+ [obj_texte]
+  [presentation]
+   position=616,2
+   taille=10,72
+   id=419
+   wstyle="STD"
+  [texte]
+   texte="Divalto Comptabilité version"
+ [cadre]
+  [presentation]
+   position=612,0
+   taille=18,313
+   id=417
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=9,4
+   taille=10,17
+   id=393
+   wstyle="STD"
+  [texte]
+   texte="Etat"
+ [obj_texte]
+  [presentation]
+   position=10,277
+   taille=10,14
+   id=394
+   wstyle="STD"
+  [texte]
+   texte="Page"
+ [obj_texte]
+  [presentation]
+   position=30,4
+   taille=10,21
+   id=395
+   wstyle="STD"
+  [texte]
+   texte="Dossier"
+ [obj_texte]
+  [presentation]
+   position=31,247
+   taille=10,9
+   id=396
+   wstyle="STD"
+  [texte]
+   texte="le"
+ [cadre]
+  [presentation]
+   position=6,1
+   taille=38,312
+   id=392
+  [param_cadre]
+   nature=vide_arrondi
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=48,1
+   taille=25,311
+   id=171
+  [param_cadre]
+   nature=plein
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+ [cadre]
+  [presentation]
+   position=48,219
+   taille=340,1
+   id=174
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=48,124
+   taille=340,1
+   id=175
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=48,67
+   taille=340,1
+   id=176
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=48,1
+   taille=340,311
+   id=177
+  [param_cadre]
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [obj_texte]
+  [presentation]
+   position=51,3
+   taille=12,61
+   id=178
+   wstyle="GRAND_GRAS"
+  [texte]
+   texte="RECAPITULATIF"
+ [obj_texte]
+  [presentation]
+   position=51,126
+   taille=10,92
+   cadrage=centre
+   id=179
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Mouvement"
+ [obj_texte]
+  [presentation]
+   position=51,221
+   taille=10,89
+   cadrage=centre
+   id=180
+   wstyle="STD_GRAS"
+  [texte]
+   texte=" Solde"
+ [obj_texte]
+  [presentation]
+   position=60,68
+   taille=10,56
+   cadrage=centre
+   id=181
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Report"
+ [obj_texte]
+  [presentation]
+   position=60,126
+   taille=10,45
+   cadrage=centre
+   id=182
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=60,172
+   taille=10,46
+   cadrage=centre
+   id=183
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [obj_texte]
+  [presentation]
+   position=60,221
+   taille=10,44
+   cadrage=centre
+   id=184
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Débit"
+ [obj_texte]
+  [presentation]
+   position=60,266
+   taille=10,44
+   cadrage=centre
+   id=185
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Crédit"
+ [obj_texte]
+  [presentation]
+   position=108,3
+   taille=8,61
+   id=186
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="COMPTES AUXILIAIRES"
+ [obj_texte]
+  [presentation]
+   position=126,5
+   taille=8,60
+   id=187
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="CLIENTS"
+ [obj_texte]
+  [presentation]
+   position=135,5
+   taille=8,60
+   id=188
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="FOURNISSEURS"
+ [obj_texte]
+  [presentation]
+   position=144,5
+   taille=8,60
+   id=189
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="AUTRES"
+ [obj_texte]
+  [presentation]
+   position=169,3
+   taille=8,61
+   id=190
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="COMPTES DE BILAN"
+ [obj_texte]
+  [presentation]
+   position=187,5
+   taille=8,60
+   id=191
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes de Capitaux"
+ [obj_texte]
+  [presentation]
+   position=196,5
+   taille=8,60
+   id=192
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes d'immobilisation"
+ [obj_texte]
+  [presentation]
+   position=205,5
+   taille=8,62
+   id=193
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes Stock et En-cours"
+ [obj_texte]
+  [presentation]
+   position=214,5
+   taille=8,60
+   id=194
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes de Tiers"
+ [obj_texte]
+  [presentation]
+   position=223,5
+   taille=8,60
+   id=195
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes Financiers"
+ [obj_texte]
+  [presentation]
+   position=252,3
+   taille=8,61
+   id=196
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="COMPTES DE GESTION"
+ [obj_texte]
+  [presentation]
+   position=270,5
+   taille=8,60
+   id=197
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes de Charges"
+ [obj_texte]
+  [presentation]
+   position=279,5
+   taille=8,60
+   id=198
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes de Produits"
+ [obj_texte]
+  [presentation]
+   position=305,3
+   taille=8,58
+   id=199
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="RESULTAT"
+ [obj_texte]
+  [presentation]
+   position=324,5
+   taille=8,60
+   id=200
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes Spéciaux"
+ [obj_texte]
+  [presentation]
+   position=334,5
+   taille=8,60
+   id=201
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="Comptes Analytiques"
+ [obj_texte]
+  [presentation]
+   position=369,3
+   taille=8,52
+   id=202
+   wstyle="PETIT_GRAS"
+  [texte]
+   texte="TOTAUX COMPTABILITE"
+ [champ]
+  [presentation]
+   position=9,22
+   taille=10,109
+   id=397
+   wstyle="STD"
+  [description]
+   donnee=mz,micle,mz
+   format="l"
+ [champ]
+  [presentation]
+   position=10,291
+   taille=10,18
+   id=398
+   wstyle="STD"
+  [description]
+   donnee=system,zpage,system
+ [champ]
+  [presentation]
+   position=20,240
+   taille=10,69
+   cadrage=droite
+   id=399
+   wstyle="STD"
+  [description]
+   donnee=system,user,system
+   format="1"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=30,24
+   taille=10,12
+   id=400
+   wstyle="STD"
+  [description]
+   donnee=xq,dos,c3xq
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=16,0
+   taille=16,313
+   cadrage=centre
+   id=401
+   wstyle="TRES_TRES_TRES_GRAND_GRAS"
+  [description]
+   donnee=xq,titre,c3xq
+ [champ]
+  [presentation]
+   position=31,252
+   taille=10,57
+   cadrage=droite
+   id=402
+   wstyle="STD"
+  [description]
+   donnee=xq,logdh,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa+hh:mm:ss
+ [champ]
+  [presentation]
+   position=30,38
+   taille=10,109
+   id=403
+   wstyle="STD"
+  [description]
+   donnee=ca,nom,ca
+ [champ]
+  [presentation]
+   position=125,62
+   taille=10,50
+   id=210
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=134,62
+   taille=10,50
+   id=211
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=143,62
+   taille=10,50
+   id=212
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=186,62
+   taille=10,50
+   id=213
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=195,62
+   taille=10,50
+   id=214
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=204,62
+   taille=10,50
+   id=215
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,6
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=213,62
+   taille=10,50
+   id=216
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,7
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=222,62
+   taille=10,50
+   id=217
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,8
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=269,62
+   taille=10,50
+   id=218
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,9
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=278,62
+   taille=10,50
+   id=219
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,10
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=304,62
+   taille=10,50
+   id=220
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=324,62
+   taille=10,50
+   id=221
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=333,62
+   taille=10,50
+   id=222
+   wstyle="STD"
+  [description]
+   donnee=x5,mtreptb,x5,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=368,56
+   taille=10,56
+   id=223
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtreptb,x5,14
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=125,122
+   taille=10,52
+   id=224
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=125,167
+   taille=10,52
+   id=225
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=134,122
+   taille=10,52
+   id=226
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=134,167
+   taille=10,52
+   id=227
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=143,122
+   taille=10,52
+   id=228
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=143,167
+   taille=10,52
+   id=229
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=186,122
+   taille=10,52
+   id=230
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=186,167
+   taille=10,52
+   id=231
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=195,122
+   taille=10,52
+   id=232
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=195,167
+   taille=10,52
+   id=233
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=204,122
+   taille=10,52
+   id=234
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,6
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=204,167
+   taille=10,52
+   id=235
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,6
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=213,122
+   taille=10,52
+   id=236
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,7
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=213,167
+   taille=10,52
+   id=237
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,7
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=222,122
+   taille=10,52
+   id=238
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,8
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=222,167
+   taille=10,52
+   id=239
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,8
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=269,122
+   taille=10,52
+   id=240
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,9
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=269,167
+   taille=10,52
+   id=241
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,9
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=278,122
+   taille=10,52
+   id=242
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,10
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=278,167
+   taille=10,52
+   id=243
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,10
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=304,122
+   taille=10,52
+   id=244
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=304,167
+   taille=10,52
+   id=245
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=324,122
+   taille=10,52
+   id=246
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=324,167
+   taille=10,52
+   id=247
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=333,122
+   taille=10,52
+   id=248
+   wstyle="STD"
+  [description]
+   donnee=x5,mtdbtb,x5,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=333,167
+   taille=10,52
+   id=249
+   wstyle="STD"
+  [description]
+   donnee=x5,mtcrtb,x5,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=368,116
+   taille=10,58
+   id=250
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtdbtb,x5,14
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=368,161
+   taille=10,58
+   id=251
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtcrtb,x5,14
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=125,213
+   taille=10,52
+   id=252
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=125,259
+   taille=10,52
+   id=253
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=134,213
+   taille=10,52
+   id=254
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=134,259
+   taille=10,52
+   id=255
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=143,213
+   taille=10,52
+   id=256
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=143,259
+   taille=10,52
+   id=257
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=186,213
+   taille=10,52
+   id=258
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=186,259
+   taille=10,52
+   id=259
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=195,213
+   taille=10,52
+   id=260
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=195,259
+   taille=10,52
+   id=261
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=204,213
+   taille=10,52
+   id=262
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,6
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=204,259
+   taille=10,52
+   id=263
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,6
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=213,213
+   taille=10,52
+   id=264
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,7
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=213,259
+   taille=10,52
+   id=265
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,7
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=222,213
+   taille=10,52
+   id=266
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,8
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=222,259
+   taille=10,52
+   id=267
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,8
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=269,213
+   taille=10,52
+   id=268
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,9
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=269,259
+   taille=10,52
+   id=269
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,9
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=278,213
+   taille=10,52
+   id=270
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,10
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=278,259
+   taille=10,52
+   id=271
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,10
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=304,207
+   taille=10,58
+   id=272
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtslddbtb,x5,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=304,253
+   taille=10,58
+   id=273
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtsldcrtb,x5,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=324,213
+   taille=10,52
+   id=274
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=324,259
+   taille=10,52
+   id=275
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=333,213
+   taille=10,52
+   id=276
+   wstyle="STD"
+  [description]
+   donnee=x5,mtslddbtb,x5,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=333,259
+   taille=10,52
+   id=277
+   wstyle="STD"
+  [description]
+   donnee=x5,mtsldcrtb,x5,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=368,207
+   taille=10,58
+   id=278
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtslddbtb,x5,14
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=368,253
+   taille=10,58
+   id=279
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,mtsldcrtb,x5,14
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [multi_choix]
+  [presentation]
+   position=125,111
+   taille=10,13
+   id=280
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,1
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=134,111
+   taille=10,13
+   id=281
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,2
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=143,111
+   taille=10,13
+   id=282
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,3
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=186,111
+   taille=10,13
+   id=283
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,4
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=195,111
+   taille=10,13
+   id=284
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,5
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=204,111
+   taille=10,13
+   id=285
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,6
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=213,111
+   taille=10,13
+   id=286
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,7
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=222,111
+   taille=10,13
+   id=287
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,8
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=269,111
+   taille=10,13
+   id=288
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,9
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=278,111
+   taille=10,13
+   id=289
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,10
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=304,111
+   taille=10,13
+   id=290
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,11
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=324,111
+   taille=10,13
+   id=291
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,12
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=333,111
+   taille=10,13
+   id=292
+   wstyle="STD"
+  [description]
+   donnee=x5,choix1,x5,13
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [multi_choix]
+  [presentation]
+   position=368,111
+   taille=10,13
+   id=293
+   wstyle="STD_GRAS"
+  [description]
+   donnee=x5,choix1,x5,14
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="ccfdmc.dhfi","SENS_5"
+ [champ]
+  [presentation]
+   position=616,74
+   taille=10,16
+   id=420
+   wstyle="STD"
+  [description]
+   donnee=xq,version,c3xq
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=22
+ libelle="position 1ere page"
+ taille=1
+ type_bloc=mobile
+ debut=15
+ fin=54
+ ident_unique=22
+[bloc]
+ numero=23
+ libelle="Signal confidentialité"
+ taille=1
+ type_bloc=mobile
+ debut=10
+ fin=65532
+ debordement=10
+ ident_unique=23
+ [obj_texte]
+  [presentation]
+   position=0,10
+   taille=10,303
+   id=458
+   wstyle="STD_GRAS"
+  [texte]
+   texte="(!) Attention, des établissements confidentiels ont été ignorés. Des montants peuvent être incomplets."
+[diva]
+;*
+; CIAG Août 2016 - PJO : Balance Sortie Excel 
+;*
+
+Public Record "ccfdd.dhsd" c3 c3
+Public Record "a5dd.dhsd" mz mz
+Public Record "ccfdd.dhsd" x4 x4
+Public Record "ccfdd.dhsd" xq c3xq
+Public Record "ccfdd.dhsd" x5 x5
+Public Record "ccfdd.dhsd" ca ca
+Public Record "gtfdd.dhsd" xp xp
+
+module "yoffice.dhop"
+1	  Wt_EXCEL_repert  256 
+1	  Wt_EXCEL_fichier 256
+1	  Wt_EXCEL_feuille 256
+1    Wt_Statut          1,0
+1    Wt_LIG             8,0
+1 	  Wt_Premiere_Fois	1
+1	  Wt_BALANCE		  50
+1    Wi                 3,0
+
+
+;*
+Private Procedure Bloc_EditionCompte_1_Ap
+;*
+; CIAG Août 2016 - PJO : Balance Sortie Excel 
+;*
+
+Beginp
+
+	If c3xq.Choix(9) = 2
+		If Wt_Premiere_Fois = ' ' 
+			Wt_Premiere_Fois = 'N' 
+			Office_Begin
+			;* BTN le 07/09/2016 - DDM 91 : NE PLUS SPECIFIER DE REPERTOIRE NI DE NOM
+;			Wt_EXCEL_repert = "c:\divalto_fichiers\"
+;			If MZ.Dos = 100
+;		  		Wt_EXCEL_fichier = "balance_absoger.xlsx"
+;			Elsif MZ.Dos = 200
+;		  		Wt_EXCEL_fichier = "balance_gerbaud.xlsx"
+;			Elsif MZ.Dos = 300
+;		  		Wt_EXCEL_fichier = "balance_cts.xlsx"
+;			Endif
+
+		;	Wt_EXCEL_feuille = 'BALANCE'
+
+		;	Wt_Statut = Office_OpenCalc(Wt_EXCEL_repert,Wt_EXCEL_fichier, Wt_EXCEL_feuille , 1, , ,1)				; ouverture d'une feuille excel
+			Wt_Statut = Office_OpenCalc(" "," " , Wt_EXCEL_feuille , 1, , ,1)				; ouverture d'une feuille excel		
+			; Titre 
+			Wt_LIG =  1 
+			If c3xq.Choix(8) = 1 
+				Wt_BALANCE = "Générale"
+			Elsif c3xq.Choix(8) = 2
+				Wt_BALANCE = "Client"
+			Elsif c3xq.Choix(8) = 3
+				Wt_BALANCE = "Fournisseur"
+			Elsif c3xq.Choix(8) = 4
+				Wt_BALANCE = "Personnel"
+			Else
+				Wt_BALANCE =  c3xq.Choix(8)
+			Endif
+			Office_WriteString(Wt_LIG, 1, "Balance " & Wt_BALANCE )
+			Office_WriteFormat(Wt_LIG, 3, sdate(c3xq.PerDDt, '/'), "DATE")
+			Office_WriteFormat(Wt_LIG, 4, sdate(c3xq.PerFDt, '/'), 'DATE')
+			; Entête Colonne 
+			Wt_LIG = Wt_LIG + 1 
+			Office_WriteString(Wt_LIG, 1, "COMPTE")
+			Office_WriteString(Wt_LIG, 2, "INTITULE")
+			Office_WriteString(Wt_LIG, 3, "REPORT")
+
+			Office_WriteString(Wt_LIG, 5, "MOUVEMENTS-DEBIT")
+			Office_WriteString(Wt_LIG, 6, "MOUVEMENTS-CREDIT")
+			Office_WriteString(Wt_LIG, 7, "SOLDE-DEBIT")
+			Office_WriteString(Wt_LIG, 8, "SOLDE-CREDIT")
+	
+		Endif
+		
+		; Ecriture feuille Excel 
+		Wt_LIG = Wt_LIG + 1 
+		Office_WriteString(Wt_LIG, 1, C3.Cpt)
+		Office_WriteString(Wt_LIG, 2, C3.Lib)
+		Office_WriteFormat(Wt_LIG, 3, X4.MtRep, "Numeric", 2)
+		If C3xq.Choix(6) = 2
+			Office_WriteString(Wt_LIG, 4, "Cr")
+		Elsif C3xq.Choix(6) = 1
+			Office_WriteString(Wt_LIG, 4, "Db")
+		Endif
+		Office_WriteFormat(Wt_LIG, 5, X4.MtDb, "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 6, X4.MtCr, "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 7, X4.MtSldDb, "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 8, X4.MtSldCr, "Numeric", 2)
+	Endif
+Endp
+
+
+
+
+;*
+Procedure Imprimer_Ligne_Recap
+;*
+; CIAG Août 2016 - PJO : Balance Sortie Excel 
+;*
+
+Beginp
+		Office_WriteFormat(Wt_LIG, 3, X5.MtRepTb(Wi), "Numeric", 2)
+		If x5.Choix1(Wi) = 2
+			Office_WriteString(Wt_LIG, 4, "Cr")
+		Elsif x5.Choix1(Wi) = 1
+			Office_WriteString(Wt_LIG, 4, "Db")
+		Endif
+		Office_WriteFormat(Wt_LIG, 5, X5.MtDbTb(Wi), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 6, X5.MtCrTb(Wi), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 7, X5.MtSldDbTb(Wi), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 8, X5.MtSldCrTb(Wi), "Numeric", 2)
+Endp
+
+
+
+
+;*
+Procedure Bloc_RecapitulatifDeGranlivr_1_Ap
+;*
+; CIAG Août 2016 - PJO : Balance Sortie Excel 
+;*
+
+Beginp
+
+	Standard.Bloc_RecapitulatifDeGranlivr_1_Ap
+	
+	If c3xq.Choix(9) = 2
+		
+			; Titre 
+			Wt_LIG =  Wt_LIG + 5  
+			Office_WriteString(Wt_LIG, 1, "Balance " & Wt_BALANCE )
+			Office_WriteFormat(Wt_LIG, 3, sdate(c3xq.PerDDt, '/'), "DATE")
+			Office_WriteFormat(Wt_LIG, 4, sdate(c3xq.PerFDt, '/'), 'DATE')
+			; Entête Colonne 
+			Wt_LIG = Wt_LIG + 1 
+			Office_WriteString(Wt_LIG, 2, "RECAPITULATIF")
+			Office_WriteString(Wt_LIG, 3, "REPORT")
+
+			Office_WriteString(Wt_LIG, 5, "MOUVEMENTS-DEBIT")
+			Office_WriteString(Wt_LIG, 6, "MOUVEMENTS-CREDIT")
+			Office_WriteString(Wt_LIG, 7, "SOLDE-DEBIT")
+			Office_WriteString(Wt_LIG, 8, "SOLDE-CREDIT")
+
+		;* COMPTES AUXILIAIRES 
+			Wt_LIG = Wt_LIG + 2 
+			Office_WriteString(Wt_LIG, 2, "COMPTES AUXILIAIRES")
+		;*
+			Wt_LIG = Wt_LIG + 2 
+			Wi = 1
+			Office_WriteString(Wt_LIG, 2, "CLIENTS")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 2
+			Office_WriteString(Wt_LIG, 2, "FOURNISSEURS")
+			Imprimer_Ligne_Recap 
+  		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 3
+			Office_WriteString(Wt_LIG, 2, "AUTRES")
+			Imprimer_Ligne_Recap 
+
+		;* COMPTES DE BILAN  
+			Wt_LIG = Wt_LIG + 2 
+			Office_WriteString(Wt_LIG, 2, "COMPTES DE BILAN")
+		;*
+			Wt_LIG = Wt_LIG + 2 
+			Wi = 4
+			Office_WriteString(Wt_LIG, 2, "Comptes de Capitaux")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 5
+			Office_WriteString(Wt_LIG, 2, "Comptes d'immobilisation")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 6
+			Office_WriteString(Wt_LIG, 2, "Comptes Stock et En-cours")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 7
+			Office_WriteString(Wt_LIG, 2, "Comptes de Tiers")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 8
+			Office_WriteString(Wt_LIG, 2, "Comptes Financiers")
+			Imprimer_Ligne_Recap 
+	
+		;* COMPTES DE GESTION  
+			Wt_LIG = Wt_LIG + 2 
+			Office_WriteString(Wt_LIG, 2, "COMPTES DE GESTION")
+		;*
+			Wt_LIG = Wt_LIG + 2 
+			Wi = 9
+			Office_WriteString(Wt_LIG, 2, "Comptes de Charges")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 10
+			Office_WriteString(Wt_LIG, 2, "Comptes de Produits")
+			Imprimer_Ligne_Recap 
+
+		;* RESULTAT
+			Wt_LIG = Wt_LIG + 2 
+			Office_WriteString(Wt_LIG, 2, "RESULTAT")
+			Wi = 11
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 2 
+			Wi = 12
+			Office_WriteString(Wt_LIG, 2, "Comptes Spéciaux")
+			Imprimer_Ligne_Recap 
+		;*
+			Wt_LIG = Wt_LIG + 1 
+			Wi = 13
+			Office_WriteString(Wt_LIG, 2, "Comptes Analytiques")
+			Imprimer_Ligne_Recap 
+			
+		;* TOTAUX 
+			Wt_LIG = Wt_LIG + 4 
+			Office_WriteString(Wt_LIG, 2, "TOTAUX COMPTABILITE")
+			Wi = 14
+			Imprimer_Ligne_Recap 
+
+	Endif
+
+Endp
+
+
+;*
+Procedure Bloc_TotalGeneral_1_Ap
+;*
+; CIAG Août 2016 - PJO : Balance Sortie Excel 
+;*
+Beginp
+	Standard.Bloc_TotalGeneral_1_Ap
+
+	If c3xq.Choix(9) = 2
+		; Ecriture feuille Excel 
+		Wt_LIG = Wt_LIG + 2 
+		Office_WriteString(Wt_LIG, 2, "TOTAL GENERAL")
+		Office_WriteFormat(Wt_LIG, 3, X4.BalMtRep(4), "Numeric", 2)
+		If C3xq.Choix(6) = 2
+			Office_WriteString(Wt_LIG, 4, "Cr")
+		Elsif C3xq.Choix(6) = 1
+			Office_WriteString(Wt_LIG, 4, "Db")
+		Endif
+		Office_WriteFormat(Wt_LIG, 5, X4.BalMtDb(4), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 6, X4.BalMtCr(4), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 7, X4.BalMtSldDb(4), "Numeric", 2)
+		Office_WriteFormat(Wt_LIG, 8, X4.BalMtSldCr(4), "Numeric", 2)
+	Endif
+
+Endp
+[/diva]
+[diva_base]
+SetModuleInfo('$Id: ccii346.dhsi 32562 2013-07-02 11:25:31Z tp $')
+;>xdiva
+;*
+;* édition de balance                                         																	SCCTI034
+;*
+
+;*		Log	 Version	  N°modif		Date		Modifications
+;*
+;*		vh			4.1						12.1998	Version initiale en Diva
+;*		hc			5.1		1972		23.10.2001	correction over_writtenby (ajout .dhop)
+;*		hc						2159		25.02.2002	correction lignes "total devise" vides imprimées
+;*		jsm					2346		05.07.2002	Renommage des procédures
+
+
+;*
+;*		Déclarations
+;*
+
+include "cctc000.dhsp"
+
+public record CCFDD.dhsd x4
+public record CCFDD.dhsd x5
+Public Record "ccfdd.dhsd" c3 c3
+Public Record "ccfdd.dhsd" ca ca
+Public Record "gtfdd.dhsd" xp xp
+
+;*
+;* Fonctions et procédures
+;*
+
+;*
+Procedure DBCR (inx)
+
+1	inx	N
+
+beginp
+	X5.MT = X4.BALMTREP(inx)
+	C3XQ.CHOIX(6) = 3
+	X4.MTSLD1 = X4.BALMTSLDDB(inx) - X4.BALMTSLDCR(inx)
+	If X4.BALMTREP(inx) < 0
+		C3XQ.CHOIX(6) = 2
+		X4.BALMTREP(inx) = X4.BALMTREP(inx) * (-1)
+	Else
+		If X4.BALMTREP(inx) > 0
+			C3XQ.CHOIX(6) = 1
+		EndIf
+	EndIf
+EndP ; DBCR
+
+;*
+;* Séquences
+;*
+
+;*
+public procedure Bloc_EditionCompte_1_Av				
+;avant édition ligne détail
+beginp
+   X5.MT = X4.MTREP
+   if C3XQ.Choix(4) <> 2 or (X4.MtRep = 0 and X4.MtDb = 0 and X4.MtCr = 0 and X4.FlZero) 	; pas cpte zéro
+      HARMONY.RETOUR = 1
+   endif
+   X4.MTSLD1 = X4.MTREP + X4.MTDB - X4.MTCR
+   C3XQ.CHOIX(6) = 3
+   if X4.MTREP < 0
+      C3XQ.CHOIX(6) = 2
+      X4.MTREP = X4.MTREP * ( - 1)
+   else
+      if X4.MTREP > 0
+         C3XQ.CHOIX(6) = 1
+      endif
+   endif
+
+   C3XQ.CHOIX(7) = 3
+   if X4.MTDEVSLD < 0
+      C3XQ.CHOIX(7) = 2
+      X4.MTDEVSLD = X4.MTDEVSLD * ( - 1)
+   else
+      if X4.MTDEVSLD > 0
+         C3XQ.CHOIX(7) = 1
+      endif
+   endif
+endp
+
+;*
+public procedure Bloc_EditionCompte_2_Av				
+;avant édition total devise
+beginp
+   if C3XQ.Choix(4) <> 2 or (X4.MtRep = 0 and X4.MtDb = 0 and X4.MtCr = 0 and X4.FlZero)	\ 	;pas cpte zéro
+   or (X4.MTDEVREP = 0 and X4.MTDEVDB = 0 and X4.MTDEVCR = 0) 											;pas total devise zéro
+      HARMONY.RETOUR = 1
+   endif
+   C3XQ.CHOIX(6) = 3
+   X5.MT = X4.MTDEVREP
+   if X4.MTDEVREP < 0
+      C3XQ.CHOIX(6) = 2
+      X4.MTDEVREP = X4.MTDEVREP * ( - 1)
+   else
+      if X4.MTDEVREP > 0
+         C3XQ.CHOIX(6) = 1
+      endif
+   endif
+
+   X5.MT = X4.MTDEVSLD
+   if X4.MTDEVSLD < 0
+      X4.MTDEVSLD = X4.MTDEVSLD * ( - 1)
+      X4.MTSLDCR = X4.MTDEVSLD
+      X4.MTSLDDB = 0
+   else
+      X4.MTSLDDB = X4.MTDEVSLD
+      X4.MTSLDCR = 0
+   endif
+endp
+
+;*
+public procedure Bloc_TotalGroupe_1_Av			
+;avant total groupe
+beginp
+   if C3XQ.CHOIX(4) > 2                   ;que les classes
+      HARMONY.RETOUR = 1
+   endif
+   if X4.FLRUP = 0                      ;pas de compte édité
+      HARMONY.RETOUR = 1
+   endif
+   DBCR(1)
+endp
+
+;*
+public procedure Bloc_TotalGroupe_1_Ap			
+;après total groupe
+beginp
+endp
+
+;*
+public procedure Bloc_TotalClasse_1_Av		
+;avant total classe
+beginp
+   DBCR(2)
+endp
+
+;*
+public procedure Bloc_TotalClasse_1_Ap			
+;après total classe
+beginp
+endp
+
+;*
+public procedure Bloc_TotalComptesBilan_1_Av			
+;avant total nature compte
+beginp
+   DBCR(3)
+endp
+
+;*
+public procedure Bloc_TotalComptesBilan_1_Ap		
+;après total nature compte
+beginp
+endp
+
+;*
+public procedure Bloc_TotalGeneral_1_Av			
+;avant total général
+beginp
+   DBCR(4)
+endp
+
+;*
+public procedure Bloc_TotalGeneral_1_Ap		
+;après total général
+1	i		3,0
+beginp
+   X5.MTSLDDBTB(9) = X5.MTSLDDBTB(9) - X5.MTSLDCRTB(9)
+   X5.MTSLDCRTB(9) = 0
+   if X5.MTSLDDBTB(9) < 0
+      X5.MTSLDCRTB(9) = X5.MTSLDDBTB(9) *  - 1
+      X5.MTSLDDBTB(9) = 0
+   endif
+   X5.MTSLDDBTB(10) = X5.MTSLDDBTB(10) - X5.MTSLDCRTB(10)
+   X5.MTSLDCRTB(10) = 0
+   if X5.MTSLDDBTB(10) < 0
+      X5.MTSLDCRTB(10) = X5.MTSLDDBTB(10) *  - 1
+      X5.MTSLDDBTB(10) = 0
+   endif
+   X5.MTREPTB(11) = X5.MTREPTB(10) + X5.MTREPTB(9)
+   X5.MTDBTB(11) = X5.MTDBTB(10) + X5.MTDBTB(9)
+   X5.MTCRTB(11) = X5.MTCRTB(10) + X5.MTCRTB(9)
+   X5.MTSLDDBTB(11) = X5.MTREPTB(11) + X5.MTDBTB(11) - X5.MTCRTB(11)
+   if X5.MTSLDDBTB(11) < 0
+      X5.MTSLDCRTB(11) = X5.MTSLDDBTB(11) *  - 1
+      X5.MTSLDDBTB(11) = 0
+   endif
+   for i = 4 TO 10
+      X5.MTREPTB(14) = X5.MTREPTB(14) + X5.MTREPTB(i)
+      X5.MTDBTB(14) = X5.MTDBTB(14) + X5.MTDBTB(i)
+      X5.MTCRTB(14) = X5.MTCRTB(14) + X5.MTCRTB(i)
+   next
+   for i = 12 TO 13                                   ;fiche 925
+      X5.MTREPTB(14) = X5.MTREPTB(14) + X5.MTREPTB(i) ;fiche 925
+      X5.MTDBTB(14) = X5.MTDBTB(14) + X5.MTDBTB(i)    ;fiche 925
+      X5.MTCRTB(14) = X5.MTCRTB(14) + X5.MTCRTB(i)    ;fiche 925
+   next
+   X5.MTSLDDBTB(14) = X5.MTREPTB(14) + X5.MTDBTB(14) - X5.MTCRTB(14)
+   if X5.MTSLDDBTB(14) < 0
+      X5.MTSLDCRTB(14) = X5.MTSLDDBTB(14) *  - 1
+      X5.MTSLDDBTB(14) = 0
+   endif
+endp
+
+;*
+public procedure Bloc_RecapitulatifDeGranlivr_1_Av				
+;avant récapitulatif
+1	i		3,0
+beginp
+   for i = 1 to 14
+      X5.CHOIX1(i) = 3
+      if X5.MTREPTB(i) < 0
+         X5.CHOIX1(i) = 2
+         X5.MTREPTB(i) = X5.MTREPTB(i) * ( - 1)
+      else
+         if X5.MTREPTB(i) > 0
+            X5.CHOIX1(i) = 1
+         endif
+      endif
+   next
+endp
+
+;*
+public procedure Bloc_RecapitulatifDeGranlivr_1_Ap				
+;après récapitulatif
+beginp
+endp
+
+[/diva]

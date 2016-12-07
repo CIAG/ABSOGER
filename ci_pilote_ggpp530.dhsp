@@ -1,0 +1,39 @@
+module "a5pm000.dhop"
+module "gtpm000.dhop"
+const	C_Applic_DAV				= 'DAV' 
+
+				record	a5dd.dhsd	M2
+				record	gtfdd.dhsd	XQ				G3XQ
+				record	gtfdd.dhsd	GTPCE
+public		record	GTFDD.dhsd	XZ				G3XZ												; Enregistrement échange
+public		record	a5dd.dhsd	MZ
+
+
+
+main
+
+	1	Prg		S ; Programme à lancer
+	1 chaine 	200  
+
+	chaine = '\\srvDivadev\divalto\clients\ABSO01\interfaces\divalto.xml'
+	;input "Rep " chaine 					;> pilotage
+	G3XZ.MOTCLE =	"GAMINT"				;Mnémonique incrit au menu
+
+	MZ.DOS = 100
+
+	G3_Menu_Init(G3XZ.MOTCLE, true ) ;Récupère les informations du menu	
+	if ( Prg:=A5_Programme_Tunnel( C_Applic_DAV,G3XZ.MOTCLE ) ) <> ' ' ;Récupère le programme à lancer d'après le menu
+		G3XQ.ECHANGE = MZ.ECHANGE
+		G3XQ.DOS = MZ.DOS
+		G3XQ.TUNNEL = 1 ; On est en batch et/ou tunnel
+		G3XZ.MOTCLE = fstring('U',G3XZ.MOTCLE) 
+		G3XZ.FIC =	chaine ; Fichier qui sera transmis à G3XQ par le programme ggpp530
+		
+		ping("G3XZ", G3XZ)
+		ping("G3XQ", G3XQ)
+		ping("XQ", G3XQ)
+		Ping('ZECHANGE_GTPCE', GTPCE)	; Obligatoire dans ce tunnel même si aucune info est utilisées
+		programcall( Prg, wpfNoClient = True )
+	endif
+	
+programexit

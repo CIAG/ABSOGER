@@ -1,0 +1,3176 @@
+;>xwin4obj     imprimante               6.0       20160902124647      
+[masque]
+ utilisateur="CIAG"
+ date_modification="02/09/2016"
+ feuille_style="fstyleimp.dhfi"
+ taille_ligne=9
+ taille_page=calcule
+ taille_colonne=4
+ nombre_colonnes=78
+ nombre_lignes=70
+ etat=0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1
+ diva_init="Masque_1_Init"
+ dernier_id=325
+ dernier_id_page=42
+ [adresses]
+  type_ad1_var=variable
+  type_ad2_var=variable
+  ad2_var=variable
+  type_ad3=rien
+  [type_adresse1]
+  donnee=g4,edittyp1,g4
+  [type_adresse2]
+  donnee=g4,edittyp2,g4
+  [adresse2]
+  donnee=g4,email,g4
+[defaut]
+[enregistrements]
+ "ci_dico.dhsd",,ci_trav,ci_trav,2000,0
+ "gtfdd.dhsd",,g4,g4,8300,0
+ "gtfdd.dhsd",gtfdos,soc,soc,3500,0
+ "gtfdd.dhsd",,mouv,g4mouv,2700,0
+ "gtfdd.dhsd",,mvtl,g4mvtl,1350,0
+ "gtfdd.dhsd",gtfat,art,g4art,2500,0
+ "a5dd.dhsd",,muser,muser,2000,0
+ "gtfdd.dhsd",gtfent,ent,ent,2500,0
+ "a5dd.dhsd",,mw,mw,3000,0
+ "gtfdd.dhsd",,g4t1,g4t1,100,0
+ "gtfdd.dhsd",,t013,t013,400,0
+ "ddsys.dhsd",,system,system,4160,0
+ "gtfdd.dhsd",gtfent,eec,eec,1000,0
+ "gtfdd.dhsd",,cli,cli,3000,0
+ "ci_recordsql.dhoq",,ci_lire_ent,ci_lire_ent,1024,1
+[bloc]
+ numero=1
+ libelle="En-tête"
+ taille=1
+ type_bloc=fond
+ debut=1
+ fin=70
+ diva_avant="Bloc_EnTete_Av"
+ ident_unique=1
+ [bitmap_constante]
+  [presentation]
+   position=3,1
+   taille=57,312
+   actionbitmap=reduire
+   id=320
+   wstyle="STD"
+  [param_bitmapc]
+   wnom="STDGBI"
+   wnom_couleur="BLANC"
+ [bitmap_constante]
+  [presentation]
+   position=580,1
+   taille=48,312
+   actionbitmap=largeur
+   id=321
+   wstyle="STD"
+  [param_bitmapc]
+   wnom="STD"
+   wfichier="GBI bas de page.jpg",0
+   wnom_couleur="BLANC"
+ [multi_choix]
+  [presentation]
+   position=9,226
+   taille=13,76
+   id=13
+   wstyle="TRES_GRAND_GRAS"
+  [description]
+   donnee=g4,nbex,g4
+   minmaj=majuscules
+  [param_saisie]
+   esp_si_zero=oui
+  [param_multi]
+   ouverture=oui
+   choix="gtfdmc.dhfi","NBEX"
+[bloc]
+ numero=2
+ libelle="Ligne article"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65527
+ debordement=3
+ diva_avant="BLOC_LIGNEARTICLE_1_AV"
+ diva_apres="BLOC_LIGNEARTICLE_1_AP"
+ ident_unique=2
+ [champ]
+  [presentation]
+   position=1,184
+   taille=9,31
+   id=248
+   colonnes_saisie=13
+   wstyle="PETIT"
+  [description]
+   donnee=ci_trav,ci_pu1,ci_trav
+   format="00 000 000V00"
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,237
+   taille=9,25
+   id=220
+   colonnes_saisie=12
+   wstyle="STD"
+   wtaille_fonte=7
+  [description]
+   donnee=mouv,faqte,g4mouv
+   format="\ci_modules.dhop,ci_format_qte,."
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,47
+   taille=9,126
+   id=20
+   colonnes_saisie=80
+   wstyle="DAV_DES"
+  [description]
+   donnee=ci_trav,ci_lib80_1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,263
+   taille=9,43
+   id=169
+   wstyle="STD"
+  [description]
+   donnee=g4,mont,g4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=1,218
+   taille=9,14
+   cadrage=droite
+   id=21
+   colonnes_saisie=4
+   wstyle="PETIT"
+  [description]
+   donnee=mouv,venun,g4mouv
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=1,3
+   taille=9,43
+   id=25
+   wstyle="DAV_REF"
+  [description]
+   donnee=mouv,ref,g4mouv
+[bloc]
+ numero=3
+ libelle="Débordement"
+ saut_fin=oui
+ taille=1
+ type_bloc=mobile
+ debut=65530
+ fin=65530
+ chainage=38
+ ident_unique=3
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,215
+   id=257
+   colonnes_saisie=30
+   wstyle="STD_GRAS_ITALIQUE"
+  [description]
+   donnee=ci_trav,ci_libm7,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,263
+   taille=9,43
+   id=27
+   wstyle="STD_GRAS_ITALIQUE"
+  [description]
+   donnee=g4,tab,g4,22,13
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+[bloc]
+ numero=4
+ libelle="Début vtl"
+ taille=0
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=4
+ [obj_texte]
+  [presentation]
+   position=0,68
+   taille=9,34
+   id=32
+   wstyle="PETIT_GRIS"
+  [texte]
+   texte="Quantité  Délais"
+ [cadre]
+  [presentation]
+   position=4,47
+   taille=1,22
+   id=31
+  [param_cadre]
+   nature=horizontal
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=4,47
+   taille=6,1
+   id=30
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=4,100
+   taille=1,73
+   id=29
+  [param_cadre]
+   nature=horizontal
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=4,172
+   taille=6,1
+   id=28
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+[bloc]
+ numero=5
+ libelle="Vtl"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65528
+ bloc_fond=2
+ position_fond=3
+ diva_avant="Bloc_Vtl_Av"
+ ident_unique=5
+ [champ]
+  [presentation]
+   position=0,49
+   taille=9,39
+   id=35
+   wstyle="PETIT"
+  [description]
+   donnee=mvtl,qte,g4mvtl
+   format="\ci_modules.dhop,ci_format_qte,."
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=0,90
+   taille=7,13
+   id=252
+   colonnes_saisie=30
+   wstyle="STD"
+   wtaille_fonte=7
+  [description]
+   donnee=ci_trav,ci_libm1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,108
+   taille=9,76
+   id=253
+   wstyle="STD"
+   wtaille_fonte=7
+  [description]
+   donnee=mvtl,serie,g4mvtl
+[bloc]
+ numero=6
+ libelle="Fin Vtl"
+ taille=0
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ bloc_fond=4
+ position_fond=2
+ ident_unique=6
+ [obj_texte]
+  [presentation]
+   position=0,89
+   taille=8,78
+   id=43
+   wstyle="PETIT_GRIS"
+  [texte]
+   texte="Demandé        Accepté         Reporté"
+ [cadre]
+  [presentation]
+   position=0,47
+   taille=5,1
+   id=42
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=4,47
+   taille=1,42
+   id=41
+  [param_cadre]
+   nature=horizontal
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=4,163
+   taille=1,10
+   id=40
+  [param_cadre]
+   nature=horizontal
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=0,172
+   taille=5,1
+   id=39
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+[bloc]
+ numero=7
+ libelle="Complément ligne"
+ taille=1
+ type_bloc=mobile
+ debut=11
+ fin=65526
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ diva_apres="BLOC_COMPLEMENTLIGNE_1_AP"
+ ident_unique=7
+ [champ]
+  [presentation]
+   position=0,143
+   taille=8,92
+   id=322
+   colonnes_saisie=30
+   wstyle="PETIT"
+  [description]
+   donnee=mouv,ci_couleur,g4mouv
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,20
+   taille=8,26
+   id=44
+   wstyle="PETIT"
+  [description]
+   donnee=mouv,sref1,g4mouv
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,89
+   id=46
+   wstyle="PETIT"
+  [description]
+   donnee=g4,lib,g4,3
+[bloc]
+ numero=8
+ libelle="Article confidentiel"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ ident_unique=8
+ [obj_texte]
+  [presentation]
+   position=0,206
+   taille=9,58
+   id=48
+   wstyle="STD_GRAS"
+  [texte]
+   texte="Impression"
+ [obj_texte]
+  [presentation]
+   position=0,265
+   taille=9,48
+   id=49
+   wstyle="STD_GRAS"
+  [texte]
+   texte="interrompue"
+ [champ]
+  [presentation]
+   position=0,3
+   taille=8,43
+   id=50
+   wstyle="DAV_REF_GRAS"
+  [description]
+   donnee=mouv,ref,g4mouv
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,120
+   id=51
+   wstyle="PETIT_GRAS"
+  [description]
+   donnee=art,des,g4art
+[bloc]
+ numero=9
+ libelle="Article composant"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65531
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ diva_apres="Bloc_ArticleComposant_Ap"
+ ident_unique=9
+ [champ]
+  [presentation]
+   position=1,237
+   taille=9,25
+   id=221
+   colonnes_saisie=12
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=mouv,faqte,g4mouv
+   format="\ci_modules.dhop,ci_format_qte,."
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=0,47
+   taille=8,125
+   id=52
+   wstyle="DAV_DES_GRIS"
+  [description]
+   donnee=mouv,des,g4mouv
+ [champ]
+  [presentation]
+   position=0,263
+   taille=9,43
+   id=53
+   wstyle="STD_GRIS"
+  [description]
+   donnee=g4,mont,g4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=0,307
+   taille=9,4
+   id=54
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=art,tvaart,g4art
+ [champ]
+  [presentation]
+   position=1,187
+   taille=9,28
+   id=55
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=mouv,pub,g4mouv
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=0,3
+   taille=9,43
+   id=58
+   wstyle="DAV_REF_GRIS"
+  [description]
+   donnee=mouv,ref,g4mouv
+[bloc]
+ numero=10
+ libelle="Saut de ligne"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ ident_unique=10
+[bloc]
+ numero=11
+ libelle="Fermeture du cadre"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=11
+[bloc]
+ numero=12
+ libelle="Pied"
+ taille=13
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ chainage=39
+ diva_avant="Bloc_Pied_Av"
+ ident_unique=12
+ [cadre]
+  [presentation]
+   position=23,1
+   taille=20,311
+   id=59
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRANS"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+   wcouleur_fondcadre=0,115,171,0,0,0
+ [cadre]
+  [presentation]
+   position=55,274
+   taille=1,38
+   noms="Solde_acompte"
+   id=240
+  [param_cadre]
+   nature=horizontal_b
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=73,284
+   taille=1,28
+   id=232
+  [param_cadre]
+   nature=horizontal_b
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=24,128
+   taille=65,1
+   id=62
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=54,0
+   taille=1,129
+   id=61
+  [param_cadre]
+   nature=horizontal_b
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=23,1
+   taille=65,311
+   id=60
+  [param_cadre]
+   nature=vide_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [champ]
+  [presentation]
+   position=15,125
+   taille=8,186
+   id=296
+   colonnes_saisie=80
+   wstyle="DAV_DES"
+   wtaille_fonte=6
+  [description]
+   donnee=ci_trav,ci_lib80_6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=89,4
+   taille=9,241
+   id=264
+   colonnes_saisie=80
+   wstyle="STD"
+   wtaille_fonte=7
+  [description]
+   donnee=ci_trav,ci_lib80_5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=59,262
+   taille=10,35
+   noms="Solde_acompte"
+   id=238
+   colonnes_saisie=12
+   wstyle="STD"
+  [description]
+   donnee=ent,soacmt,ent
+   format="\FormatMille"
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=52,247
+   taille=7,26
+   noms="Solde_acompte"
+   id=237
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=6
+  [description]
+   donnee=ci_trav,ci_libc9,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=36,194
+   taille=6,17
+   cadrage=centre
+   id=236
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=5
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc8,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=70,248
+   taille=8,35
+   id=201
+   colonnes_saisie=20
+   wstyle="STD"
+   wtaille_fonte=6
+   wcouleur_fonte=0,0,0,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib8,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=36,212
+   taille=6,38
+   cadrage=centre
+   id=202
+   colonnes_saisie=20
+   wstyle="STD"
+   wtaille_fonte=5
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib9,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=36,155
+   taille=6,39
+   cadrage=centre
+   id=200
+   colonnes_saisie=20
+   wstyle="STD"
+   wtaille_fonte=5
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib7,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=36,94
+   taille=6,37
+   cadrage=gauche
+   id=199
+   colonnes_saisie=50
+   wstyle="STD"
+   wtaille_fonte=5
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libl8,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=36,44
+   taille=7,48
+   cadrage=centre
+   id=198
+   colonnes_saisie=50
+   wstyle="STD"
+   wtaille_fonte=5
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libl7,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=29,7
+   taille=10,109
+   cadrage=gauche
+   id=166
+   colonnes_saisie=50
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libl5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=29,224
+   taille=10,79
+   cadrage=droite
+   id=167
+   colonnes_saisie=50
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libl1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=8,4
+   taille=6,75
+   noms="libelle_ reglement_sauf_avoir"
+   id=66
+   colonnes_saisie=50
+   wstyle="DAV_DES"
+  [description]
+   donnee=ci_trav,ci_libl3,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=77,296
+   taille=10,16
+   id=234
+   wstyle="STD_GRAS"
+  [description]
+   donnee=ent,dev,ent
+ [champ]
+  [presentation]
+   position=76,247
+   taille=12,50
+   id=231
+   wstyle="GRAND_GRAS"
+  [description]
+   donnee=g4,tab,g4,24,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,59
+   taille=10,16
+   id=170
+   wstyle="STD"
+  [description]
+   donnee=ent,escp,ent
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,94
+   taille=10,33
+   id=171
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,21,11
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,155
+   taille=10,38
+   id=173
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,211
+   taille=10,32
+   id=174
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,24,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=42,131
+   taille=8,23
+   id=175
+   colonnes_saisie=8
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=g4,tvaart,g4,1
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=15,4
+   taille=8,106
+   noms="libelle_ reglement_sauf_avoir"
+   id=225
+   wstyle="DAV_DES"
+  [description]
+   donnee=g4,lib,g4,1
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=59,296
+   taille=10,16
+   noms="Solde_acompte"
+   id=239
+   wstyle="STD"
+  [description]
+   donnee=ent,dev,ent
+ [champ]
+  [presentation]
+   position=78,131
+   taille=8,23
+   id=176
+   colonnes_saisie=8
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=g4,tvaart,g4,5
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=69,131
+   taille=8,23
+   id=177
+   colonnes_saisie=8
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=g4,tvaart,g4,4
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=60,131
+   taille=8,23
+   id=178
+   colonnes_saisie=8
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=g4,tvaart,g4,3
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=51,131
+   taille=8,23
+   id=179
+   colonnes_saisie=8
+   wstyle="PETIT_GRIS"
+  [description]
+   donnee=g4,tvaart,g4,2
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=50,155
+   taille=10,38
+   id=180
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=59,155
+   taille=10,38
+   id=181
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=50,194
+   taille=10,16
+   id=182
+   wstyle="STD"
+  [description]
+   donnee=g4,tauxtab,g4,1,2
+   format="+0V00"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=77,155
+   taille=10,38
+   id=183
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=77,194
+   taille=10,16
+   id=184
+   wstyle="STD"
+  [description]
+   donnee=g4,tauxtab,g4,1,5
+   format="+0V00"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=77,211
+   taille=10,32
+   id=185
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,24,5
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=68,155
+   taille=10,38
+   id=186
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=68,194
+   taille=10,16
+   id=187
+   wstyle="STD"
+  [description]
+   donnee=g4,tauxtab,g4,1,4
+   format="+0V00"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=68,211
+   taille=10,32
+   id=188
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,24,4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=59,194
+   taille=10,16
+   id=189
+   wstyle="STD"
+  [description]
+   donnee=g4,tauxtab,g4,1,3
+   format="+0V00"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=50,211
+   taille=10,32
+   id=190
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,24,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=59,211
+   taille=10,32
+   id=191
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,24,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,194
+   taille=10,16
+   id=192
+   wstyle="STD"
+  [description]
+   donnee=g4,tauxtab,g4,1,1
+   format="+0V00"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,247
+   taille=12,50
+   id=193
+   wstyle="GRAND"
+  [description]
+   donnee=g4,tab,g4,24,13
+   format="\FormatMille*"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=59,94
+   taille=10,33
+   id=194
+   wstyle="STD"
+  [description]
+   donnee=ent,piedmt,ent,1
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=68,94
+   taille=10,33
+   id=195
+   wstyle="STD"
+  [description]
+   donnee=ent,piedmt,ent,2
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=77,94
+   taille=10,33
+   id=196
+   wstyle="STD"
+  [description]
+   donnee=ent,piedmt,ent,3
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=41,3
+   taille=10,38
+   id=69
+   wstyle="STD"
+  [description]
+   donnee=g4,tab,g4,22,12
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=42,296
+   taille=9,16
+   id=70
+   wstyle="STD"
+  [description]
+   donnee=ent,dev,ent
+ [champ]
+  [presentation]
+   position=59,7
+   taille=9,75
+   id=75
+   wstyle="STD_GRIS"
+  [description]
+   donnee=g4,piedlib,g4,1
+ [champ]
+  [presentation]
+   position=68,7
+   taille=9,75
+   id=76
+   wstyle="STD_GRIS"
+  [description]
+   donnee=g4,piedlib,g4,2
+ [champ]
+  [presentation]
+   position=77,7
+   taille=9,75
+   id=77
+   wstyle="STD_GRIS"
+  [description]
+   donnee=g4,piedlib,g4,3
+[bloc]
+ numero=13
+ libelle="Traite en facture"
+ taille=0
+ type_bloc=mobile
+ debut=65535
+ fin=65535
+ ident_unique=13
+[bloc]
+ numero=14
+ libelle="sans traite en facture"
+ taille=1
+ type_bloc=mobile
+ debut=65535
+ fin=65535
+ ident_unique=14
+[bloc]
+ numero=15
+ libelle="Facture début BL"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ chainage=41
+ diva_avantgestion="Bloc_FactureDebutBl_AvGestion"
+ ident_unique=15
+ [champ]
+  [presentation]
+   position=0,147
+   taille=9,39
+   id=277
+   colonnes_saisie=10
+   wstyle="GRAND"
+   wtaille_fonte=10
+  [description]
+   donnee=ci_lire_ent,pidt,ci_lire_ent
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,57
+   id=251
+   colonnes_saisie=30
+   wstyle="GRAND_ITALIQUE"
+   wtaille_fonte=10
+  [description]
+   donnee=ci_trav,ci_libm5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,98
+   taille=9,37
+   id=83
+   wstyle="GRAND"
+   wtaille_fonte=10
+  [description]
+   donnee=g4,blno,g4
+  [param_saisie]
+   esp_si_zero=oui
+[bloc]
+ numero=16
+ libelle="Facture fin BL"
+ taille=2
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ diva_apres="BLOC_FACTUREFINBL_1_AP"
+ diva_avantgestion="Bloc_FactureFinBl_AvGestion"
+ ident_unique=16
+ [cadre]
+  [presentation]
+   position=10,1
+   taille=1,311
+   id=286
+   wstyle="STD"
+  [param_cadre]
+   nature=plein
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRAIT_SIMPLE_NOIR"
+ [champ]
+  [presentation]
+   position=1,47
+   taille=9,70
+   id=250
+   colonnes_saisie=30
+   wstyle="STD_ITALIQUE"
+  [description]
+   donnee=ci_trav,ci_libm4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=1,130
+   taille=9,38
+   id=85
+   wstyle="STD"
+  [description]
+   donnee=g4,blmt,g4
+   format="\FormatMille"
+  [param_saisie]
+   esp_si_zero=oui
+[bloc]
+ numero=17
+ libelle="Facture début commande"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=17
+[bloc]
+ numero=18
+ libelle="Facture fin commande"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ diva_apres="BLOC_FACTUREFINCOMMANDE_1_AP"
+ ident_unique=18
+[bloc]
+ numero=19
+ libelle="Début code opération"
+ taille=2
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ diva_avant="Bloc_DebutCodeOperation_Av"
+ ident_unique=19
+ [champ]
+  [presentation]
+   position=5,47
+   taille=9,241
+   id=316
+   colonnes_saisie=80
+   wstyle="STD_GRAS_ITALIQUE"
+  [description]
+   donnee=ci_trav,ci_lib80_4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=20
+ libelle="Chapitre début"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65524
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ ident_unique=20
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,123
+   id=88
+   wstyle="PETIT_GRAS_ITALIQUE_GRIS"
+  [description]
+   donnee=mouv,des,g4mouv
+[bloc]
+ numero=21
+ libelle="Chapitre fin"
+ taille=0
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ ident_unique=21
+[bloc]
+ numero=22
+ libelle="poste début"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65525
+ debordement=3
+ bloc_fond=20
+ position_fond=2
+ ident_unique=22
+ [champ]
+  [presentation]
+   position=0,47
+   taille=9,123
+   id=93
+   wstyle="PETIT_GRAS_ITALIQUE_GRIS"
+  [description]
+   donnee=mouv,des,g4mouv
+[bloc]
+ numero=23
+ libelle="Poste fin"
+ taille=0
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ bloc_fond=21
+ position_fond=2
+ ident_unique=23
+[bloc]
+ numero=24
+ libelle="Texte en-tête"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ ident_unique=24
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=9,306
+   id=97
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=25
+ libelle="libellés complémentaires"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ ident_unique=25
+ [rich_edit]
+  [presentation]
+   position=0,47
+   taille=9,252
+   id=98
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=26
+ libelle="Texte référencement tiers"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ repeter_rich=oui
+ ident_unique=26
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=9,306
+   id=99
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=27
+ libelle="Texte Mouvement"
+ taille=1
+ type_bloc=mobile
+ debut=11
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ bloc_tmaxi=oui
+ ident_unique=27
+ [rich_edit]
+  [presentation]
+   position=0,47
+   taille=10,264
+   id=100
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=28
+ libelle="Texte pied"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ ident_unique=28
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=10,306
+   id=101
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=29
+ libelle="Texte tiers"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ bloc_tmaxi=oui
+ ident_unique=29
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=10,306
+   id=102
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=30
+ libelle="Texte dossier"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65528
+ debordement=3
+ repeter_rich=oui
+ ident_unique=30
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=9,306
+   id=103
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=31
+ libelle="Attestation de conformité"
+ taille=2
+ type_bloc=mobile
+ debut=17
+ fin=65528
+ debordement=3
+ bloc_fond=2
+ position_fond=3
+ ident_unique=31
+ [obj_texte]
+  [presentation]
+   position=0,3
+   taille=9,43
+   id=104
+   wstyle="STD"
+  [texte]
+   texte="Attestation"
+ [champ]
+  [presentation]
+   position=7,14
+   taille=8,25
+   id=105
+   wstyle="PETIT"
+  [description]
+   donnee=g4t1,attest,g4t1
+ [champ]
+  [presentation]
+   position=7,47
+   taille=8,123
+   id=106
+   wstyle="PETIT"
+  [description]
+   donnee=g4t1,lib,g4t1
+[bloc]
+ numero=32
+ libelle="Nomenclature d'un produit fabriqué"
+ taille=0
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=32
+[bloc]
+ numero=33
+ libelle="remise en pied"
+ taille=2
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=33
+ [champ]
+  [presentation]
+   position=6,48
+   taille=9,217
+   id=283
+   colonnes_saisie=20
+   wstyle="STD_GRAS_ITALIQUE"
+  [description]
+   donnee=ci_trav,ci_lib5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=6,266
+   taille=9,39
+   id=108
+   wstyle="STD_GRAS_ITALIQUE"
+  [description]
+   donnee=ent,rempietot,ent
+   format="\FormatMille"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=34
+ taille=1
+ debut=0
+ fin=0
+ ident_unique=34
+[bloc]
+ numero=35
+ libelle="éco contribution"
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65526
+ debordement=3
+ ident_unique=35
+ [obj_texte]
+  [presentation]
+   position=0,47
+   taille=9,127
+   id=109
+   wstyle="PETIT_ITALIQUE"
+  [texte]
+   texte="Eco-contribution"
+ [champ]
+  [presentation]
+   position=0,222
+   taille=9,25
+   id=110
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=g4,deeeqte,g4
+   format="\ci_modules.dhop,ci_format_qte,."
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,175
+   taille=9,24
+   id=111
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=mouv,deeepu,g4mouv
+   format="\FormatMille"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=0,280
+   taille=9,25
+   id=112
+   wstyle="PETIT_ITALIQUE"
+  [description]
+   donnee=g4,deeemont,g4
+   format="\FormatMille"
+  [param_saisie]
+   type_date=jj/mm/aaaa
+[bloc]
+ numero=36
+ libelle="CGV"
+ taille=1
+ type_bloc=fond
+ debut=1
+ fin=70
+ ident_unique=36
+ [rich_edit]
+  [presentation]
+   position=3,10
+   taille=600,306
+   id=113
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=37
+ libelle="entete client"
+ taille=1
+ type_bloc=fond
+ debut=1
+ fin=70
+ chainage=1
+ diva_avant="Bloc_EnteteClient_Av"
+ diva_apres="Bloc_EnteteClient_Ap"
+ ident_unique=37
+ [cadre]
+  [presentation]
+   position=72,160
+   taille=83,150
+   noms="Cadre_avec_TVA"
+   id=260
+   wstyle="STD"
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=12
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="DLF_CHAMP_GRISCLAIR"
+   wcouleur_fondcadre=255,255,255,0,0,0
+ [cadre]
+  [presentation]
+   position=72,160
+   taille=74,150
+   noms="Cadre_sans_TVA"
+   id=261
+   wstyle="STD"
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=12
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="DLF_CHAMP_GRISCLAIR"
+   wcouleur_fondcadre=255,255,255,0,0,0
+ [cadre]
+  [presentation]
+   position=213,1
+   taille=20,311
+   id=114
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRANS"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+   wcouleur_fondcadre=0,115,171,0,0,0
+ [cadre]
+  [presentation]
+   position=164,1
+   taille=18,311
+   id=116
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRANS"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+   wcouleur_fondcadre=0,115,171,0,0,0
+ [cadre]
+  [presentation]
+   position=72,3
+   taille=55,150
+   id=245
+  [param_cadre]
+   nature=vide_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=164,1
+   taille=38,311
+   id=122
+  [param_cadre]
+   nature=vide_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=164,40
+   taille=38,1
+   id=120
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=164,77
+   taille=38,1
+   id=119
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=164,112
+   taille=38,1
+   id=118
+  [param_cadre]
+   nature=vertical
+   wnom_couleurcadre="TRAIT_SIMPLE_GRISFONCE"
+   wnom_couleurfond="TRANS"
+ [cadre]
+  [presentation]
+   position=213,1
+   taille=364,311
+   id=115
+  [param_cadre]
+   nature=vide_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [champ]
+  [presentation]
+   position=144,163
+   taille=9,32
+   noms="Cadre_avec_TVA"
+   id=279
+   colonnes_saisie=20
+   wstyle="STD_GRIS"
+  [description]
+   donnee=ci_trav,ci_lib2,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=135,163
+   taille=10,138
+   id=259
+   colonnes_saisie=30
+   wstyle="STD"
+  [description]
+   donnee=ci_trav,ci_libm9,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=76,6
+   taille=7,22
+   id=249
+   colonnes_saisie=30
+   wstyle="PETIT_GRAS_ITALIQUE"
+  [description]
+   donnee=ci_trav,ci_libm3,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=115,29
+   taille=10,122
+   id=258
+   colonnes_saisie=30
+   wstyle="STD"
+  [description]
+   donnee=ci_trav,ci_libm8,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=139,3
+   taille=19,157
+   id=222
+   colonnes_saisie=20
+   wstyle="TRES_TRES_GRAND_GRAS"
+   wtaille_fonte=18
+  [description]
+   donnee=ci_trav,ci_lib6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=144,197
+   taille=9,44
+   noms="Cadre_avec_TVA"
+   id=263
+   colonnes_saisie=14
+   wstyle="STD"
+  [description]
+   donnee=cli,tvano,cli
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=168,116
+   taille=10,79
+   id=126
+   colonnes_saisie=20
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=168,79
+   taille=10,31
+   cadrage=centre
+   id=127
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc3,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=168,41
+   taille=10,36
+   cadrage=centre
+   id=128
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc2,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=168,5
+   taille=10,32
+   id=129
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=85,163
+   taille=10,139
+   id=210
+   wstyle="STD"
+  [description]
+   donnee=g4,adrcpl1,g4,4
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=85,28
+   taille=9,122
+   id=218
+   wstyle="STD"
+  [description]
+   donnee=g4,adrcpl1,g4,3
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=95,28
+   taille=9,123
+   id=219
+   wstyle="STD"
+  [description]
+   donnee=g4,adrcpl2,g4,3
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=95,163
+   taille=10,139
+   id=211
+   wstyle="STD"
+  [description]
+   donnee=g4,adrcpl2,g4,4
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=126,163
+   taille=9,27
+   id=212
+   wstyle="STD"
+  [description]
+   donnee=g4,cpostal,g4,4
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=115,163
+   taille=10,139
+   id=214
+   wstyle="STD"
+  [description]
+   donnee=g4,loc,g4,4
+ [champ]
+  [presentation]
+   position=126,191
+   taille=9,117
+   id=215
+   wstyle="STD"
+  [description]
+   donnee=g4,vil,g4,4
+ [champ]
+  [presentation]
+   position=105,163
+   taille=10,139
+   id=216
+   wstyle="STD"
+  [description]
+   donnee=g4,rue,g4,4
+ [champ]
+  [presentation]
+   position=75,163
+   taille=10,139
+   id=217
+   wstyle="STD"
+  [description]
+   donnee=g4,nom,g4,4
+ [champ]
+  [presentation]
+   position=105,28
+   taille=8,23
+   id=205
+   wstyle="PETIT"
+   wtaille_fonte=8
+  [description]
+   donnee=g4,cpostal,g4,3
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=105,55
+   taille=8,80
+   id=207
+   wstyle="PETIT"
+   wtaille_fonte=8
+  [description]
+   donnee=g4,vil,g4,3
+ [champ]
+  [presentation]
+   position=75,28
+   taille=8,117
+   id=209
+   wstyle="PETIT_GRAS"
+   wtaille_fonte=8
+  [description]
+   donnee=g4,nom,g4,3
+ [champ]
+  [presentation]
+   position=185,4
+   taille=9,34
+   id=137
+   wstyle="STD"
+  [description]
+   donnee=ent,pidt,ent
+ [champ]
+  [presentation]
+   position=185,44
+   taille=9,28
+   id=138
+   wstyle="STD_GRAS"
+  [description]
+   donnee=ent,pino,ent
+  [param_saisie]
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=185,82
+   taille=9,26
+   id=325
+   colonnes_saisie=8
+   wstyle="STD"
+  [description]
+   donnee=ent,projet,ent
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=185,117
+   taille=10,88
+   id=142
+   wstyle="STD"
+  [description]
+   donnee=ent,piref,ent
+ [champ]
+  [presentation]
+   position=203,272
+   taille=9,17
+   id=256
+   colonnes_saisie=30
+   wstyle="STD_GRIS"
+  [description]
+   donnee=ci_trav,ci_libm6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=219,284
+   taille=10,25
+   id=143
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc7,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=220,182
+   taille=7,37
+   cadrage=centre
+   id=144
+   colonnes_saisie=20
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=220,222
+   taille=7,16
+   id=145
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=220,242
+   taille=7,26
+   id=146
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=219,59
+   taille=10,73
+   id=147
+   colonnes_saisie=20
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib3,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=219,4
+   taille=10,39
+   id=148
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=203,288
+   taille=10,13
+   id=149
+   wstyle="STD"
+  [description]
+   donnee=system,zpage,system
+[bloc]
+ numero=38
+ libelle="cadre suite"
+ taille=1
+ type_bloc=fond
+ debut=1
+ fin=70
+ chainage=1
+ bloc_fond=1
+ position_fond=1
+ ident_unique=38
+ [cadre]
+  [presentation]
+   position=69,1
+   taille=20,311
+   id=150
+  [param_cadre]
+   nature=plein_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRANS"
+   wnom_couleurfond="TITRE_ENCADRE_FOND"
+   wcouleur_fondcadre=0,115,171,0,0,0
+ [cadre]
+  [presentation]
+   position=69,1
+   taille=509,311
+   id=154
+  [param_cadre]
+   nature=vide_arrondi
+   arrondi=10
+   wnom_couleurcadre="TRAIT_SIMPLE_NOIR"
+   wnom_couleurfond="TRANS"
+ [champ]
+  [presentation]
+   position=60,127
+   taille=9,47
+   cadrage=droite
+   id=164
+   colonnes_saisie=15
+   wstyle="STD"
+   wcouleur_fonte=128,128,128,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc1,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=60,209
+   taille=9,33
+   cadrage=droite
+   id=165
+   colonnes_saisie=15
+   wstyle="STD"
+   wcouleur_fonte=128,128,128,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc2,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=60,243
+   taille=9,24
+   id=155
+   colonnes_saisie=8
+   wstyle="STD"
+  [description]
+   donnee=ent,pino,ent
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+   esp_si_zero=oui
+ [champ]
+  [presentation]
+   position=60,175
+   taille=9,28
+   id=156
+   colonnes_saisie=10
+   wstyle="STD"
+  [description]
+   donnee=ent,pidt,ent
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=60,272
+   taille=9,17
+   id=255
+   colonnes_saisie=30
+   wstyle="STD_GRIS"
+  [description]
+   donnee=ci_trav,ci_libm6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=75,284
+   taille=7,25
+   id=157
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc7,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=76,182
+   taille=7,37
+   cadrage=centre
+   id=158
+   colonnes_saisie=20
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=76,222
+   taille=7,16
+   id=159
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc6,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=76,242
+   taille=7,26
+   id=160
+   colonnes_saisie=15
+   wstyle="STD"
+   wtaille_fonte=7
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc5,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=75,59
+   taille=7,73
+   id=161
+   colonnes_saisie=20
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_lib3,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=75,4
+   taille=7,39
+   id=162
+   colonnes_saisie=15
+   wstyle="STD"
+   wgras=1
+   wcouleur_fonte=255,255,255,0,0,0
+  [description]
+   donnee=ci_trav,ci_libc4,ci_trav
+   saisie=non
+  [param_saisie]
+   type_date=jj/mm/aaaa
+ [champ]
+  [presentation]
+   position=60,288
+   taille=10,13
+   id=163
+   wstyle="STD"
+  [description]
+   donnee=system,zpage,system
+[bloc]
+ numero=39
+ libelle="NOTEUE"
+ saut_fin=oui
+ taille=1
+ type_bloc=mobile
+ debut=17
+ fin=65528
+ debordement=3
+ chainage=36
+ repeter_rich=oui
+ diva_avant="Bloc_Noteue_Av"
+ diva_apres="Bloc_Noteue_Ap"
+ ident_unique=39
+ [rich_edit]
+  [presentation]
+   position=0,3
+   taille=10,306
+   noms="AccordUE_visible"
+   id=230
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=40
+ libelle="Note fin de BL"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ chainage=16
+ repeter_rich=oui
+ diva_avant="Bloc_NoteFinDeBl_Av"
+ ident_unique=41
+ [rich_edit]
+  [presentation]
+   position=1,48
+   taille=8,263
+   id=282
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[bloc]
+ numero=41
+ libelle="Facture Début BL - RichText"
+ taille=1
+ type_bloc=mobile
+ debut=12
+ fin=65526
+ debordement=3
+ repeter_rich=oui
+ bloc_tmaxi=oui
+ diva_avantgestion="Bloc_FactureDebutBlRichtext_AvGestion"
+ ident_unique=42
+ [rich_edit]
+  [presentation]
+   position=1,48
+   taille=8,263
+   id=319
+   wstyle="STD"
+  [description]
+   donnee=mw,rtfnom,mw,1
+   minmaj=majuscules
+  [param_rich_edit]
+   largeur=183
+[diva]
+SetModuleInfo('$Id: gtii200la.dhsi 39564 2014-05-21 09:43:16Z lk $')
+
+Module	'GTPM000.dhop'
+Module	'GTTMPCE.dhop'
+Module	'GTTM000.dhop'
+
+module   'a5pmnotejoint.dhop'		  ; bib fonctions Rich text
+
+hfile "gtfdd.dhsd" gtftab  gtftab
+hfile "gtfdd.dhsd" gtfat  gtfat
+hfile "a5dd.dhsd" a5fdos  a5fdos
+
+Public Record "gtfdd.dhsd" art g4art
+Public Record "gtfdd.dhsd" ent ent
+Public Record "gtfdd.dhsd" mouv g4mouv
+Public Record "gtfdd.dhsd" g4 g4
+Public Record "gtfdd.dhsd" soc soc
+Public Record "gtfdd.dhsd" vrp vrp
+Public Record "gtfdd.dhsd" t020 w2t020
+Public Record "a5dd.dhsd" mw mw
+Public Record "gtfdd.dhsd" g4t1 g4t1
+Public Record "gtfdd.dhsd" mvtl g4mvtl
+Public Record "gtfdd.dhsd" t013 t013
+Public Record "gtfdd.dhsd" gtent gtent
+Public Record "gtfdd.dhsd" Mouv mouv
+Public Record "gtfdd.dhsd" Mvtl mvtl
+
+
+Public Record "gtfdd.dhsd" cli cli 
+Public Record "ci_dico.dhsd" ci_trav ci_trav
+Public Record "gtfdd.dhsd" t041 t041
+Public Record "a5dd.dhsd" muser muser
+Public Record "a5dd.dhsd" mw mw2
+Public Record "gtfdd.dhsd" rcl rcl 
+Public Record "gtfdd.dhsd" eec eec
+Public Record "gtfdd.dhsd" t026 t026
+
+Public Recordsql "gtrspptab.dhoq" ModeTransport 
+Public Recordsql "gtrspptab.dhoq" Pays 
+Public recordSql "a5_sd.dhoq" Notes note
+
+1 Kebin > "gtfdd.dhsd" cebin; cle de table  
+
+Const C_Applic_DAV					= 'DAV'
+1 Wnote 8,0
+1 cletxt > "gtfdd.dhsd" texcod
+1 wcodcli > "gtfdd.dhsd" tiers
+1 wpremier 		  1,0
+1 wpremiere_fois 1,0
+1 kuser > "gtfdd.dhsd" salcod
+
+
+Public Recordsql ci_recordsql.dhoq ci_lire_ent
+
+
+;*
+Public Procedure Bloc_ArticleComposant_Ap		; Après une ligne de composant
+Beginp
+	Piece_Imp_Ligne_Cpl
+Endp														
+
+Public Procedure Masque_1_Init
+Beginp
+	; G4.VTLEDITTYP = 0	; pas d'impressions des ventilations (bloc 2 uiquement)
+	; G4.VTLEDITTYP = 1	; 1ere ventilation avec le mouvement (bloc 2) ventilations suivantes (bloc 5)
+	; G4.VTLEDITTYP = 2	; si une seule ventilation impression bloc 2 si plusieurs ventilations impression blocs 4-5-6
+	 G4.VTLEDITTYP = 3	; toutes les ventilations sont imprimées par le bloc 5 avec bloc début 4 et bloc de fin 6
+	
+	 G4.RELEDITTYP = False	; on n'imprime pas les lignes non livrées en pied de bl =true pour imprimer
+	G4.DTFlg = False
+
+	ci_trav.ci_libl6 = nospaces(soc.Nom) & " " & nospaces(soc.Tit)
+	ci_trav.ci_libl9 = nospaces(soc.Email) & "/" & nospaces(soc.Web)
+	ci_trav.ci_lib80_2 = nospaces(soc.AdrCpl1) &  " - " & nospaces(soc.Cpostal) & " " &nospaces(soc.Vil) & " - FRANCE"
+	ci_trav.ci_lib80_3 = "Tel " & nospaces(soc.Tel) & " / Fax " &nospaces(soc.Fax)
+	
+switch cli.Lang
+
+	case 'EN'		; traduction des libellés en anglais
+		  ci_trav.ci_lib1  = 'Your reference'
+		  ci_trav.ci_lib2  = 'VAT number'
+		  ci_trav.ci_lib3  = 'Description'
+		  ci_trav.ci_lib4  = 'Unit price'
+ 		  ci_trav.ci_lib5  = 'Discount'
+		  ci_trav.ci_lib6  = 'Invoice'
+		  ci_trav.ci_lib7  = 'VAT base'
+ 		  If ent.Op = 'D'	  ;facture d'avoir
+	     	ci_trav.ci_lib8 = 'Total to be deducted'
+		  Else
+	     	ci_trav.ci_lib8 = 'Net to be payed'	
+		  Endif
+ 		  ci_trav.ci_lib9  = 'VAT amount'
+		  ci_trav.ci_libc1 = 'Date'
+		  ci_trav.ci_libc2 = 'Document No.'
+		  ci_trav.ci_libc3 = 'Code affaire'
+		  ci_trav.ci_libc4 = 'Reference'
+ 		  ci_trav.ci_libc5 = 'Quantity'
+		  ci_trav.ci_libc6 = 'Unit'
+ 		  ci_trav.ci_libc7 = 'Amount'
+		  ci_trav.ci_libc8 = 'VAT rate'
+		  ci_trav.ci_libc9 = 'Down payment'
+		  ci_trav.ci_libl1 = 'Total inc. Taxes'
+ 		  ci_trav.ci_libl2 = "Customer's agreement"
+   	  ci_trav.ci_libl3 = 'Payment terms : '
+  		  ci_trav.ci_libl4 = 'Validity of the offer : '
+		  ci_trav.ci_libl5 = 'Total before tax'
+		  ci_trav.ci_libl7 = 'Financial discount rate'
+ 		  ci_trav.ci_libl8 = 'Financial discount'
+	  	  ci_trav.ci_libm2 = 'Freight / Weight'
+		  ci_trav.ci_libm3 = 'Shipped to'
+		  ci_trav.ci_libm4 = 'Total Packing list'
+	     ci_trav.ci_libm5 = 'Packing list n°'
+		  ci_trav.ci_libm6 = 'Page'
+		  ci_trav.ci_libm7 = 'Subtotal'
+
+	case 'SP'		; traduction des libellés en espagnol
+		  ci_trav.ci_lib1  = 'Su referencia'
+		  ci_trav.ci_lib2  = 'N° de IVA'	  
+		  ci_trav.ci_lib3  = 'Descripción'
+		  ci_trav.ci_lib4  = 'Precio unitario'
+ 		  ci_trav.ci_lib5  = 'Descuento'
+		  ci_trav.ci_lib6  = 'Factura'
+		  ci_trav.ci_lib7  = 'Base IVA'
+ 		  If ent.Op = 'D'	  ;facture d'avoir
+		  	ci_trav.ci_lib8 = 'Total a deducir'
+		  Else
+		  	ci_trav.ci_lib8 = 'Total a pagar'
+		  Endif
+ 		  ci_trav.ci_lib9  = 'Importe IVA'
+		  ci_trav.ci_libc1 = 'Fecha'
+		  ci_trav.ci_libc2 = 'Número'
+		  ci_trav.ci_libc3 = 'Code affaire'
+		  ci_trav.ci_libc4 = 'Referencia'
+ 		  ci_trav.ci_libc5 = 'Cantidad'
+		  ci_trav.ci_libc6 = 'Unidad'
+ 		  ci_trav.ci_libc7 = 'Importe'
+		  ci_trav.ci_libc8 = 'Tasa'
+		  ci_trav.ci_libc9 = 'Depósito'
+		  ci_trav.ci_libl1 = 'Importe con IVA'
+ 		  ci_trav.ci_libl2 = 'Valido para acuerdo, El Cliente'
+ 		  ci_trav.ci_libl3 = 'Condiciones de pago : '
+  		  ci_trav.ci_libl4 = 'Validez de la oferta : '
+		  ci_trav.ci_libl5 = 'Total sin IVA'
+		  ci_trav.ci_libl7 = 'Tasa de descuento financiero'
+ 		  ci_trav.ci_libl8 = 'Descuento financiero'
+		  ci_trav.ci_libm2 = 'Transporte / Peso'
+		  ci_trav.ci_libm3 = 'Enviado a'
+		  ci_trav.ci_libm4 = 'Total Albarán de entrega'
+		  ci_trav.ci_libm5 = 'Albarán de entrega n°'
+		  ci_trav.ci_libm6 = 'Página'
+		  ci_trav.ci_libm7 = 'Total intermediario'
+ 
+ 		case 'P '		; traduction des libellés en portuguais
+		  ci_trav.ci_lib1  = 'Sua referência'
+		  ci_trav.ci_lib2  = 'N° IVA'	  
+		  ci_trav.ci_lib3  = 'Designação'
+		  ci_trav.ci_lib4  = 'Preço unitário'
+ 		  ci_trav.ci_lib5  = 'Desconto'
+		  ci_trav.ci_lib6  = 'Factura'
+		  ci_trav.ci_lib7  = 'Base IVA'
+ 		  If ent.Op = 'D'	  ;facture d'avoir
+		  	ci_trav.ci_lib8 = 'Líquido a deduzir'
+		  Else
+		  	ci_trav.ci_lib8 = 'Preço líquido '
+		  Endif
+ 		  ci_trav.ci_lib9  = 'Montante IVA'
+		  ci_trav.ci_libc1 = 'Data'
+		  ci_trav.ci_libc2 = 'Número doc.'
+		  ci_trav.ci_libc3 = 'Cliente'
+		  ci_trav.ci_libc4 = 'Referência'
+ 		  ci_trav.ci_libc5 = 'Quantidade'
+		  ci_trav.ci_libc6 = 'U.V.'
+ 		  ci_trav.ci_libc7 = 'Montante'
+		  ci_trav.ci_libc8 = 'Taxa'
+		  ci_trav.ci_libc9 = 'Pagamento inic.'
+		  ci_trav.ci_libl1 = 'Com IVA'
+ 		  ci_trav.ci_libl2 = 'Acordo válido, o cliente'
+ 		  ci_trav.ci_libl3 = 'As condições de pagamento : '
+  		  ci_trav.ci_libl4 = 'Validade oferta : '
+		  ci_trav.ci_libl5 = 'Total sem IVA'
+		  ci_trav.ci_libl7 = '% des.'
+ 		  ci_trav.ci_libl8 = 'Desconto'
+		  ci_trav.ci_libm2 = 'Modo de transporte  / Peso'
+		  ci_trav.ci_libm3 = 'Cobrado a'
+		  ci_trav.ci_libm4 = 'Total Guia de remessa '
+		  ci_trav.ci_libm5 = 'Guia de remessa n°'
+		  ci_trav.ci_libm6 = 'Página'
+		  ci_trav.ci_libm7 = 'Subtotal'
+
+	default			; traduction des libellés en français
+		  ci_trav.ci_lib1  = 'Votre référence'
+		  ci_trav.ci_lib2  = 'N° TVA'		  
+		  ci_trav.ci_lib3  = 'Désignation'
+		  ci_trav.ci_lib4  = 'Prix unitaire'
+ 		  ci_trav.ci_lib5  = 'Remise'
+		  ci_trav.ci_lib6  = 'Facture'
+		  ci_trav.ci_lib7  = 'Base T.V.A'
+ 		  If ent.Op = 'D'	 ;facture d'avoir
+  		  	ci_trav.ci_lib8 = 'Net à déduire'
+		  Else
+ 		  	ci_trav.ci_lib8 = 'Net à payer'
+		  Endif
+ 		  ci_trav.ci_lib9  = 'Montant T.V.A'
+		  ci_trav.ci_libc1 = 'Date'
+		  ci_trav.ci_libc2 = 'Numéro pièce'
+		  ci_trav.ci_libc3 = 'Code affaire'
+		  ci_trav.ci_libc4 = 'Référence'
+ 		  ci_trav.ci_libc5 = 'Quantité'
+		  ci_trav.ci_libc6 = 'U.V.'
+ 		  ci_trav.ci_libc7 = 'Montant'
+		  ci_trav.ci_libc8 = 'Taux'
+		  ci_trav.ci_libc9 = 'Acompte'
+		  ci_trav.ci_libl1 = 'T.T.C.'
+ 		  ci_trav.ci_libl2 = 'Bon pour accord, Le Client'
+  		  ci_trav.ci_libl3 = 'Conditions de règlement : '	 
+  		  ci_trav.ci_libl4 = "Validité de l'offre : "
+		  ci_trav.ci_libl5 = 'Total HT'
+		  ci_trav.ci_libl7 = '% esc.'
+ 		  ci_trav.ci_libl8 = 'Escompte'
+		  ci_trav.ci_libm2 = 'Mode de transport / Poids'
+		  ci_trav.ci_libm3 = 'Envoyé à'
+		  ci_trav.ci_libm4 = 'Total Bon de livraison'
+		  ci_trav.ci_libm5 = 'Bon de livraison n°'
+		  ci_trav.ci_libm6 = 'Page'
+		  ci_trav.ci_libm7 = 'Sous-Total'
+
+endswitch
+
+
+Endp
+;*
+Public Procedure BLOC_LIGNEARTICLE_1_AV
+Beginp
+	Piece_Imp_Ligne_Vente_Av
+
+		ci_trav.ci_lib80_1 = g4mouv.Des
+
+	if g4mouv.Des = g4art.Des
+		wcodcli = 'C99999' & cli.Lang
+	if cli.Lang <> 'FR'
+			if iseek(gtfat, rcl, "V", ent.Dos & g4mouv.Ref & g4mouv.Sref1 & g4mouv.Sref2 & wcodcli) = 0		; lecture référencement article sur client langue
+			  	ci_trav.ci_lib80_1 = rcl.DesFo
+  	
+			endif
+	endif
+	endif
+
+	; calcul prix unitaire brut
+
+	ci_trav.ci_pu1 = g4mouv.Pub					 	
+
+	if g4mouv.FaQte <> 0	
+		ci_trav.ci_pu1 = g4mouv.Mont / g4mouv.FaQte
+	endif
+
+Endp
+
+
+;*
+Public Procedure BLOC_LIGNEARTICLE_1_AP
+Beginp
+	;Piece_Imp_Ligne_Ap
+	Piece_Imp_Ligne_Cpl
+Endp
+
+;*
+Public Procedure BLOC_COMPLEMENTLIGNE_1_AP
+Beginp
+	Piece_Imp_Ligne_CplSousRef
+Endp
+
+;*
+Public Procedure Bloc_DebutCodeOperation_Av
+;
+Beginp
+
+	;if Ent.Op <> G4.Op
+
+	   switch G4.Op
+			case 'C'
+ 	         if cli.Lang = 'FR'
+			      ci_trav.ci_lib80_4 = 'Vente'
+	         endif
+
+ 	         if cli.Lang = 'EN'
+		  	      ci_trav.ci_lib80_4 = 'Equipment sold'
+	         endif
+
+	         if cli.Lang = 'SP' 
+			      ci_trav.ci_lib80_4 = 'Venta'
+	         endif	
+
+ 	         if cli.Lang = 'P ' 
+			      ci_trav.ci_lib80_4 = 'Venda'
+	         endif	
+
+			case 'C O'
+ 	         if cli.Lang = 'FR'
+			      ci_trav.ci_lib80_4 = 'Vente occasion'
+	         endif
+
+ 	         if cli.Lang = 'EN'
+		  	      ci_trav.ci_lib80_4 = 'Second hand equipment'
+	         endif
+
+	         if cli.Lang = 'SP' 
+			      ci_trav.ci_lib80_4 = 'Material de segunda mano'
+	         endif	
+
+	         if cli.Lang = 'P ' 
+			      ci_trav.ci_lib80_4 = 'Venda usado'
+	         endif	
+
+			case 'D'
+ 	         if cli.Lang = 'FR'
+			      ci_trav.ci_lib80_4 = 'Avoir client'
+	         endif
+
+ 	         if cli.Lang = 'EN'
+		  	      ci_trav.ci_lib80_4 = 'Credit note'
+	         endif
+
+	         if cli.Lang = 'SP' 
+			      ci_trav.ci_lib80_4 = 'Nota de crédito'
+	         endif	
+
+	         if cli.Lang = 'P ' 
+			      ci_trav.ci_lib80_4 = 'Nota de crédito'
+	         endif	
+
+			case 'D O'
+ 	         if cli.Lang = 'FR'
+			      ci_trav.ci_lib80_4 = 'Reprise client occasion'
+	         endif
+
+ 	         if cli.Lang = 'EN'
+		  	      ci_trav.ci_lib80_4 = 'Equipment returned'
+	         endif
+
+	         if cli.Lang = 'SP' 
+			      ci_trav.ci_lib80_4 = 'Material devuelto'
+	         endif	
+
+ 	         if cli.Lang = 'P ' 
+			      ci_trav.ci_lib80_4 = 'Equipamento usado comprado ao cliente'
+	         endif	
+
+			default
+            ci_trav.ci_lib80_4 = G4.lib(2)
+		Endswitch
+
+	;Endif
+Endp
+	  
+
+
+;*
+Public Procedure BLOC_FACTUREFINBL_1_AP
+Beginp
+	Piece_Imp_Bl_Fin
+	wpremiere_fois = 0
+Endp
+
+;*
+Public Procedure BLOC_FACTUREFINCOMMANDE_1_AP
+Beginp
+	Piece_Imp_Cde_Fin
+Endp
+
+;*
+Public Procedure Bloc_EnteteClient_Ap
+;
+Beginp
+	system.Zligne = 27
+Endp
+
+
+;*
+Public Procedure Bloc_EnteteClient_Av
+;
+Beginp
+	if mid(ent.Op, 1, 1) <> 'C'
+		switch cli.Lang
+
+	        case 'EN'		; traduction des libellés en anglais
+		             ci_trav.ci_lib6  = 'Credit note'
+		
+           case 'SP'		; traduction des libellés en espagnol
+		             ci_trav.ci_lib6  = 'Nota de crédito'
+
+           case 'P '		; traduction des libellés en portuguais
+		             ci_trav.ci_lib6  = 'Nota de crédito'
+
+	        default		; traduction des libellés en français
+		             ci_trav.ci_lib6  = 'Avoir'
+		
+		endswitch
+	endif
+	;
+	; PRI le 18/06/2015
+	; Libellé mode de transport + concaténation avec poids
+	;
+;   ModeTransport.Where.PK(ent.BlMod)
+;	ModeTransport.Select()
+;	if ENT.PoiTot <> 0
+;		ci_trav.ci_lib80_4 = nospaces(T026.Lib) & " / " &nospaces(ENT.PoiTot) &nospaces(soc.PoiUn)
+;	else
+;		ci_trav.ci_lib80_4 = nospaces(T026.Lib)
+;	endif
+	;
+	; PRI le 30/06/2015
+	; recherche du libellé du pays de livraison et de commande
+	;
+	If Lectab(T013,g4.Pay(3),"err",'') = 0
+			ci_trav.ci_libm8 = t013.Lib
+	endif
+	If Lectab(T013,g4.Pay(4),"err",'') = 0
+			ci_trav.ci_libm9 = t013.Lib
+	endif
+	;
+	; PRI le 03/07/2015
+	; Visibilité du N° TVA si ce dernier est renseigné
+	;
+   If CLI.TvaNo = ' '
+		Xmisetattribut("Cadre_sans_TVA", AN_VISIBILITE, AV_VISIBLE)
+		Xmisetattribut("Cadre_avec_TVA", AN_VISIBILITE, AV_CACHE)
+	else
+		Xmisetattribut("Cadre_sans_TVA", AN_VISIBILITE, AV_CACHE)
+		Xmisetattribut("Cadre_avec_TVA", AN_VISIBILITE, AV_VISIBLE)
+	endif
+Endp
+
+
+;*
+Public Procedure Bloc_EnTete_Av
+;
+Beginp
+	if wpremier = 0
+		wpremier = 1
+		harmony.retour = XMINEXT_AUTRE_BLOC
+		harmony.Cplretour = 37
+
+	endif
+Endp
+
+;*
+Public Procedure Bloc_FactureDebutBlRichtext_AvGestion
+1 idReaderNote L
+
+;
+Beginp
+	;
+	; PRI le 08/07/2015
+	; Chargement de la date de BL issue du fichier ent (utilisation du recordsql ci_lire_ent)
+	; 																=> enlever le 08/03/2016 et mis dans la Procédure Bloc_FactureDebutBl_AvGestion
+	;	ci_lire_ent.PiDt := 0
+	If G4.BLNO <> 0 
+		;		ci_lire_ent.Where.pour_piece("C","3",G4.BLNO)
+		; 		ci_lire_ent.Select()
+		
+		;
+ 		; PRI le 29/07/2015
+		; Recherche de la note texte-entête du BL	(utilisation du recordsql Notes de a5_sd.dhoq)
+		;
+		wnote = 0
+		Note_Chargement_(C_Applic_DAV,wnote)
+		note.SqlSelect("WHERE NOTE="& ci_lire_ent.TxtNoteD)
+		idReaderNote = note.DirectReaderOpen()
+		idReaderNote = note.DirectReaderSelect(idReaderNote)
+		do while note.DirectReaderNext(idReaderNote) = 1
+      	wnote = note.Note
+			Note_Chargement_(C_Applic_DAV,wnote)
+	   wend
+		note.DirectReaderClose(idReaderNote)
+	Endif	
+Endp
+
+;*---------------------------------------------------------------------------------------------------------------------------------
+;*  CIAG - PRI le 08/03/2016 : EDITION BL/FACTURES - DDA N° 56 / DDM N° 67 
+;*---------------------------------------------------------------------------------------------------------------------------------
+Public Procedure Bloc_FactureDebutBl_AvGestion
+;
+Beginp
+	;
+ 	; PRI le 08/03/2016
+	; Recherche de la bonne date de BL par le recordsql ci_lire_ent
+	;
+	ci_lire_ent.Where.pour_piece("C","3",G4.BLNO)
+ 	ci_lire_ent.Select()
+
+Endp
+
+
+;*
+Public Procedure Bloc_FactureFinBl_AvGestion
+;
+Beginp
+ 	if wpremiere_fois = 0
+		wpremiere_fois = 1
+		harmony.retour = XMINEXT_AUTRE_BLOC
+		harmony.Cplretour = 40
+	endif
+Endp
+
+
+;*
+Public Procedure Bloc_NoteFinDeBl_Av
+1 idReaderNote L
+
+;
+Beginp
+	ci_lire_ent.Where.pour_piece("C","3",G4.BLNO)
+ 	ci_lire_ent.Select()
+
+	;
+ 	; PRI le 29/07/2015
+	; Recherche de la note texte-entête du BL	(utilisation du recordsql Notes de a5_sd.dhoq)
+	;
+	wnote = 0
+	Note_Chargement_(C_Applic_DAV,wnote)
+	note.SqlSelect("WHERE NOTE="& ci_lire_ent.TxtNoteF)
+	idReaderNote = note.DirectReaderOpen()
+	idReaderNote = note.DirectReaderSelect(idReaderNote)
+	do while note.DirectReaderNext(idReaderNote) = 1
+     	wnote = note.Note
+		Note_Chargement_(C_Applic_DAV,wnote)
+	wend
+	note.DirectReaderClose(idReaderNote)
+Endp
+
+
+;*
+Public Procedure Bloc_Noteue_Ap
+;
+Beginp
+;* chargement de la note CVG 
+
+	cletxt = 'CGV_' & cli.Lang & '     '
+	if cli.Lang = " "
+	 	cletxt = 'CGV_FR     '
+	endif
+	 		kebin = 41
+				if iseek(gtftab, T041, "A", [ent.Dos kebin cletxt]) = 0		
+				wnote = t041.Note
+				else
+					
+				endif
+
+
+
+	 Note_Chargement_(C_Applic_DAV,wnote)
+
+Endp
+
+
+
+
+;*
+Public Procedure Bloc_Noteue_Av
+;
+Beginp
+	; PRI doit tester l'accord UE pour voir si oui ou non on imprime le rich texte
+	if ent.ci_accordue <> '1'
+			; Invisibilité des zones montants dans sous total
+			Xmisetattribut("AccordUE_visible", AN_VISIBILITE, AV_CACHE)	
+	endif
+Endp
+
+
+;*
+Public Procedure Bloc_Pied_Av
+;
+Beginp
+	; recherche du nom de l'ADV
+	if ent.SalCod <> " "
+		kuser = ent.SalCod
+	else 
+		kuser = system.User
+	endif
+	if iseek(a5fdos, muser, "B", [kuser]) <> 0		
+		muser.Nom = " "
+	endif
+
+	if ent.SoAcMt = 0
+			; Invisibilité des zones acompte dans le pied
+			Xmisetattribut("Solde_acompte", AN_VISIBILITE, AV_CACHE)	
+	endif
+	
+	;
+ 	; PRI le 20/01/2016 - N° DDA = 36
+	; Reformatage des échéances multiples et invisibilité si	avoir
+	;
+	ci_trav.ci_lib80_6 = ' '
+	if ent.op = 'D'
+			; Invisibilité des zones si avoir dans le pied
+			Xmisetattribut("libelle_ reglement_sauf_avoir", AN_VISIBILITE, AV_CACHE)	
+	Else
+		if eec.EchMt(1)<>0
+			switch cli.Lang
+			  case 'EN'		; traduction des libellés en anglais
+ 				 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(1))) & nospaces(ent.Dev) & " on " & nospaces(sdate(eec.EchDt(1),"/"))
+           case 'SP'		; traduction des libellés en espagnol
+ 				 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(1))) & nospaces(ent.Dev) & " el " & nospaces(sdate(eec.EchDt(1),"/"))
+	        default		; traduction des libellés en français
+ 				 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(1))) & nospaces(ent.Dev) & " au " & nospaces(sdate(eec.EchDt(1),"/"))
+			endswitch
+		else
+			ci_trav.ci_lib80_6 = nospaces(sdate(eec.EchDt(1),"/"))
+		Endif
+		if eec.EchMt(2)<>0
+			if ci_trav.ci_lib80_6 <> ' '
+				switch cli.Lang
+				  case 'EN'		; traduction des libellés en anglais
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " on " & nospaces(sdate(eec.EchDt(2),"/")) 
+	           case 'SP'		; traduction des libellés en espagnol
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " el " & nospaces(sdate(eec.EchDt(2),"/")) 
+		        default		; traduction des libellés en français
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " au " & nospaces(sdate(eec.EchDt(2),"/")) 
+				endswitch
+			else
+				switch cli.Lang
+				  case 'EN'		; traduction des libellés en anglais
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " on " & nospaces(sdate(eec.EchDt(2),"/"))
+	           case 'SP'		; traduction des libellés en espagnol
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " el " & nospaces(sdate(eec.EchDt(2),"/"))
+		        default		; traduction des libellés en français
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(2))) & nospaces(ent.Dev) & " au " & nospaces(sdate(eec.EchDt(2),"/"))
+				endswitch
+			endif
+		Endif
+		if eec.EchMt(3)<>0
+ 			if ci_trav.ci_lib80_6 <> ' '
+				switch cli.Lang
+				  case 'EN'		; traduction des libellés en anglais
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " on " & nospaces(sdate(eec.EchDt(3),"/")) 
+	           case 'SP'		; traduction des libellés en espagnol
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " el " & nospaces(sdate(eec.EchDt(3),"/")) 
+		        default		; traduction des libellés en français
+					 ci_trav.ci_lib80_6 = nospaces(ci_trav.ci_lib80_6) & "+" & nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " au " & nospaces(sdate(eec.EchDt(3),"/")) 
+				endswitch
+			else
+				switch cli.Lang
+				  case 'EN'		; traduction des libellés en anglais
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " on " & nospaces(sdate(eec.EchDt(3),"/"))
+	           case 'SP'		; traduction des libellés en espagnol
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " el " & nospaces(sdate(eec.EchDt(3),"/"))
+		        default		; traduction des libellés en français
+					 ci_trav.ci_lib80_6 = nospaces(format("<000 009V99>",eec.EchMt(3))) & nospaces(ent.Dev) & " au " & nospaces(sdate(eec.EchDt(3),"/"))
+				endswitch
+			endif
+		Endif
+	endif
+
+	;
+	; PRI le 06/07/2015
+	; Mentions en bas de facture suivant le régime TVA et langues !
+	;
+		ci_trav.ci_lib80_5 = ' '
+	switch ent.TvaTie
+	   case 'FT'
+			switch cli.Lang
+  				case 'EN'		; traduction des libellés en anglais
+		  			ci_trav.ci_lib80_5 =  'VAT exemption,  art. 275 of CGI'
+				case 'SP'		; traduction des libellés en espagnol
+		  			ci_trav.ci_lib80_5 =  'Exención del IVA, art. 275 del CGI' 
+				case 'P '		; traduction des libellés en portuguais
+		  			ci_trav.ci_lib80_5 =  'Isenção de IVA, art. 275 do CGI' 
+				default			; traduction des libellés en français
+		  			ci_trav.ci_lib80_5 =  'Exonération de TVA, art. 275 du CGI'
+			endswitch
+		case 'UE'
+			switch cli.Lang
+  				case 'EN'		; traduction des libellés en anglais
+		  			ci_trav.ci_lib80_5 =  'VAT exemption,  art. 262 ter, I of CGI'
+				case 'SP'		; traduction des libellés en espagnol
+		  			ci_trav.ci_lib80_5 =  'Exención del IVA, art. 262 ter, I del CGI' 
+				case 'P '		; traduction des libellés en portuguais
+		  			ci_trav.ci_lib80_5 =  'Isenção de IVA, art. 262 ter, I do CGI' 
+				default			; traduction des libellés en français
+		  			ci_trav.ci_lib80_5 =  'Exonération de TVA, art. 262 ter, I du CGI'
+			endswitch
+		case 'EX'
+			switch cli.Lang
+  				case 'EN'		; traduction des libellés en anglais
+		  			ci_trav.ci_lib80_5 =  'VAT exemption,  art. 262 I of CGI'
+				case 'SP'		; traduction des libellés en espagnol
+		  			ci_trav.ci_lib80_5 =  'Exención del IVA, art. 262 I del CGI'
+				case 'P '		; traduction des libellés en portuguais
+		  			ci_trav.ci_lib80_5 =  'Isenção de IVA, art. 262 I do CGI' 
+				default			; traduction des libellés en français
+		  			ci_trav.ci_lib80_5 =  'Exonération de TVA, art. 262 I du CGI'
+			endswitch
+	endswitch
+;* chargement de la note CVG 
+
+	cletxt = 'NUE_' & cli.Lang & '     '
+	if cli.Lang = " "
+	 	cletxt = 'NUE_FR     '
+	endif
+	 		kebin = 41
+				if iseek(gtftab, T041, "A", [ent.Dos kebin cletxt]) = 0		
+				wnote = t041.Note
+				else
+					
+				endif
+
+
+
+	 Note_Chargement_(C_Applic_DAV,wnote)
+	 
+
+Endp
+
+
+
+
+;*
+Public Procedure Bloc_Vtl_Av
+;
+Beginp
+	switch g4art.GiCod
+		case 1
+			ci_trav.ci_libm1 = " "
+		case 2
+			ci_trav.ci_libm1 = "S/N"
+		case 3
+			ci_trav.ci_libm1 = "Lot"
+  		Default
+ 			ci_trav.ci_libm1 = " "
+	Endswitch
+	
+
+Endp
+[/diva]
+[diva_base]
+[/diva]
